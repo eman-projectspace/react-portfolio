@@ -1,17 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { FiChevronDown } from 'react-icons/fi';
+
+const letters = ['C', 'O', 'D', 'E', 'R'];
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, x: -50, y: 50, rotate: -45 },
+  visible: { opacity: 1, x: 0, y: 0, rotate: 0, transition: { type: 'spring', stiffness: 100 } }
+};
+
+
+
 
 const Home = () => {
+
+
   return (
-    <section className="min-h-screen bg-blue-950 text-white flex flex-col items-center justify-center px-4 text-center overflow-x-hidden">
+    <section className="min-h-screen bg-[#0a192f] text-white flex flex-col items-center justify-center px-4 text-center overflow-x-hidden">
 
       {/* Profile Image */}
       <motion.img
         src="/Eman.webp"
         alt="Eman"
-        className="w-32 h-32 rounded-full border-4 border-blue-700 shadow-lg mb-4 mt-20"
+        className="w-36 h-36 rounded-full border-4 border-[#1E90FF] shadow-lg mb-6 mt-24"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
@@ -19,7 +39,7 @@ const Home = () => {
 
       {/* Name & Title */}
       <motion.h1
-        className="text-5xl font-bold"
+        className="text-5xl font-extrabold tracking-wide"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
@@ -27,28 +47,46 @@ const Home = () => {
         Hi, I'm Eman 👋
       </motion.h1>
 
+      {/* Move this block higher in the JSX */}
+      <motion.div
+        className="flex gap-4 text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent mt-3 mb-2"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        {letters.map((char, index) => (
+          <motion.span key={index} variants={item}>
+            {char}
+          </motion.span>
+        ))}
+      </motion.div>
+
+
+
       <motion.p
-        className="mt-2 text-xl text-blue-200"
+        className="mt-2 text-xl text-[#8892b0] font-medium"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.8 }}
       >
-        Frontend Developer | React Specialist
+        Full Stack Web Developer | React Specialist
       </motion.p>
 
-      {/* Detailed Tagline */}
+
+
+      {/* Tagline */}
       <motion.p
-        className="max-w-2xl mt-4 text-blue-300"
+        className="max-w-2xl mt-4 text-[#ccd6f6] leading-relaxed"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 1 }}
       >
-        I turn ideas into interactive, high-performing websites with modern technologies like React and Tailwind. I specialize in crafting clean UI, responsive layouts, and seamless user experiences that leave a lasting impression.
+        I turn ideas into interactive, high-performing websites using React & Tailwind. Clean UI. Fast. Responsive.
       </motion.p>
 
       {/* Buttons */}
       <motion.div
-        className="mt-6 flex gap-4 flex-wrap justify-center"
+        className="mt-6 flex flex-wrap gap-4 justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
@@ -57,80 +95,185 @@ const Home = () => {
           href="/Eman Waheed Dev.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-700 text-white px-6 py-2 rounded-full shadow hover:bg-blue-600 transition"
+          className="bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#0a192f] transition"
         >
           View Resume
         </a>
-
         <a
           href="/contact"
-          className="border border-blue-500 text-blue-300 px-6 py-2 rounded-full hover:bg-blue-800 transition"
+          className="text-[#8892b0] px-6 py-2 rounded-full border border-[#112240] hover:text-white hover:border-white transition"
         >
           Contact Me
         </a>
       </motion.div>
 
-      {/* Social Links */}
-      <motion.div
-        className="mt-6 flex gap-6 text-2xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.6 }}
-      >
-        <a
-          href="https://github.com/eman-projectspace"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-blue-400"
+
+
+      {/*  2 portion*/}
+      {/* Floating Code Symbols Background */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => {
+          const symbols = ['{ }', '</>', '()', 'const', '=>', 'HTML', 'CSS', 'React'];
+          const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+          const size = Math.random() * 20 + 14; // font size between 14px and 34px
+          const left = Math.random() * 100;
+          const duration = 10 + Math.random() * 10; // duration between 10–20s
+          const delay = Math.random() * 5;
+
+          return (
+            <motion.div
+              key={i}
+              className="absolute text-blue-400 font-mono opacity-10"
+              style={{
+                fontSize: `${size}px`,
+                left: `${left}%`,
+                top: '110%',
+              }}
+              initial={{ y: 0 }}
+              animate={{ y: '-120%' }}
+              transition={{
+                duration,
+                delay,
+                repeat: Infinity,
+                ease: 'linear',
+              }}
+            >
+              {symbol}
+            </motion.div>
+          );
+        })}
+      </div>
+      {/*  */}
+
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-[2px] h-[2px] bg-blue-400 rounded-full"
+            initial={{
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+              opacity: 0,
+            }}
+            animate={{
+              y: -50,
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              delay: Math.random() * 2,
+              repeat: Infinity,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* 3rd */}
+
+      {/* Skills Section */}
+      <section className=" w-full py-16 px-6">
+        <motion.div
+          className="max-w-5xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
         >
-          <FaGithub />
-        </a>
-        <a
-          href="https://linkedin.com/in/yourlinkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-blue-400"
+          <h2 className="text-3xl font-bold text-white mb-8">🛠️ Skills</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-blue-300 text-lg">
+            <span>React</span>
+            <span>Tailwind CSS</span>
+            <span>JavaScript</span>
+            <span>HTML5 & CSS3</span>
+            <span>Git & GitHub</span>
+            <span>Firebase</span>
+            <span>REST APIs</span>
+            <span>Figma to Code</span>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Final CTA */}
+      <section className=" w-full py-16 px-6 text-center">
+        <motion.div
+          className="max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
         >
-          <FaLinkedin />
-        </a>
-      </motion.div>
+          <h2 className="text-3xl font-bold text-white mb-4">Let's Build Something Amazing</h2>
+          <p className="text-blue-300 mb-6">
+            I’m open to freelance projects, internships, and collaborations. Let’s bring your vision to life.
+          </p>
+          <a
+            href="/contact"
+            className="bg-blue-700 px-8 py-3 text-white rounded-full hover:bg-blue-600 transition"
+          >
+            Get In Touch
+          </a>
+        </motion.div>
+      </section>
 
-      {/* What I Do */}
-      <motion.div
-        className="mt-12 text-blue-200 max-w-xl"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.6, duration: 0.8 }}
-      >
-        <h3 className="text-2xl font-semibold text-blue-100 mb-4">💡 What I Do</h3>
-        <ul className="text-blue-300 space-y-1">
-          <li>• Build responsive and accessible web apps</li>
-          <li>• Create reusable React components</li>
-          <li>• Integrate APIs and backend services</li>
-          <li>• Use Git, Figma, Firebase, and modern dev tools</li>
-          <li>• Focus on performance, design, and UX</li>
-        </ul>
-      </motion.div>
 
-      {/* Personal Quote */}
-      <motion.p
-        className="italic text-blue-400 mt-10 text-sm"
+      {/* Testimonials */}
+      <section className=" w-full py-16 px-6">
+        <motion.div
+          className="max-w-3xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold text-white mb-8">✨ What I Believe in </h2>
+          <blockquote className="text-blue-300 italic">
+            “Every job is a self portrait of the person who did it . Autograph your work with excellence.”
+          </blockquote>
+          <p className="text-blue-500 mt-2">— </p>
+        </motion.div>
+      </section>
+
+
+      {/* Footer */}
+      <motion.footer
+        className="w-full bg-[#0a192f] text-white py-6 border-t-4 border-[#1E90FF] text-center"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 0.8 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
-        “Crafting meaningful web experiences with every line of code.”
-      </motion.p>
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+          {/* Left */}
+          <div className="mb-4 md:mb-0">
+            <h2 className="text-lg font-semibold">© 2025 Eman Waheed</h2>
+            <p className="text-sm text-[#8892b0]">Built with ❤️ using React & Tailwind</p>
+          </div>
 
-      {/* Scroll Down Arrow */}
-      <motion.div
-        className="mt-12 text-blue-500 text-4xl animate-bounce"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.4, duration: 0.6 }}
-      >
-        <FiChevronDown className="drop-shadow-glow" />
-      </motion.div>
+          {/* Right: Social Icons */}
+          <div className="flex space-x-6 text-2xl">
+            <a
+              href="https://github.com/eman-projectspace"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1E90FF] transition"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourlinkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1E90FF] transition"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
+        </div>
+      </motion.footer>
+
+
+
+
     </section>
   );
 };
