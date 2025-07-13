@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-
+import Reviews from './Reviews';
 const letters = ['C', 'O', 'D', 'E', 'R'];
 
 const container = {
@@ -110,40 +110,7 @@ const Home = () => {
 
 
       {/*  2 portion*/}
-      {/* Floating Code Symbols Background */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => {
-          const symbols = ['{ }', '</>', '()', 'const', '=>', 'HTML', 'CSS', 'React'];
-          const symbol = symbols[Math.floor(Math.random() * symbols.length)];
-          const size = Math.random() * 20 + 14; // font size between 14px and 34px
-          const left = Math.random() * 100;
-          const duration = 10 + Math.random() * 10; // duration between 10–20s
-          const delay = Math.random() * 5;
 
-          return (
-            <motion.div
-              key={i}
-              className="absolute text-blue-400 font-mono opacity-10"
-              style={{
-                fontSize: `${size}px`,
-                left: `${left}%`,
-                top: '110%',
-              }}
-              initial={{ y: 0 }}
-              animate={{ y: '-120%' }}
-              transition={{
-                duration,
-                delay,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-            >
-              {symbol}
-            </motion.div>
-          );
-        })}
-      </div>
-      {/*  */}
 
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         {[...Array(30)].map((_, i) => (
@@ -233,6 +200,13 @@ const Home = () => {
         </motion.div>
       </section>
 
+
+      <Reviews />
+      <Link to="/reviews">
+        <button className="bg-blue-700 hover:bg-blue-600 text-white px-6 py-2 rounded-full transition">
+          Reviews
+        </button>
+      </Link>
 
       {/* Footer */}
       <motion.footer
