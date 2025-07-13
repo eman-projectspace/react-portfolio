@@ -200,13 +200,8 @@ const Home = () => {
         </motion.div>
       </section>
 
-
       <Reviews />
-      <Link to="/reviews">
-        <button className="bg-blue-700 hover:bg-blue-600 text-white px-6 py-2 rounded-full transition">
-          Reviews
-        </button>
-      </Link>
+
 
       {/* Footer */}
       <motion.footer

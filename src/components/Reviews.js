@@ -5,12 +5,41 @@ import { FaStar } from 'react-icons/fa';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+  const [formData, setFormData] = useState({ name: '', rating: 5, comment: '' });
+  const [message, setMessage] = useState('');
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/reviews')
       .then(res => setReviews(res.data))
       .catch(err => console.error(err));
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:5000/api/reviews', formData);
+      setMessage('✅ Review submitted!');
+      setFormData({ name: '', rating: 5, comment: '' });
+
+      // Refresh reviews
+      const res = await axios.get('http://localhost:5000/api/reviews');
+      setReviews(res.data);
+
+      // ✅ Hide the form after successful submission
+      setShowForm(false);
+    } catch (err) {
+      setMessage('❌ Failed to submit review');
+    }
+  };
+
+
+
 
   return (
     <section className="bg-[#0a192f] py-16 px-6 w-full text-white">
@@ -58,6 +87,72 @@ const Reviews = () => {
           ))}
         </div>
       </div>
+      <div className="text-center mt-10">
+        <div className="text-center mt-10">
+          <motion.button
+            onClick={() => setShowForm(!showForm)}
+            className="bg-blue-700 hover:bg-blue-600 text-white px-6 py-2 rounded-full transition"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            {showForm ? 'Cancel' : ' Add Your Review'}
+          </motion.button>
+        </div>
+
+      </div>
+
+      {showForm && (
+        <div className="mt-8 bg-blue-900/30 p-6 rounded-xl shadow-inner border border-blue-700 max-w-3xl mx-auto">
+          <h3 className="text-2xl font-bold text-center text-white mb-4">✍️ Leave a Review</h3>
+          {message && <p className="text-center mb-4 text-green-400 font-semibold">{message}</p>}
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full p-2 rounded bg-[#0a192f] text-white border border-blue-600 placeholder:text-blue-300"
+            />
+
+            <select
+              name="rating"
+              value={formData.rating}
+              onChange={handleChange}
+              className="w-full p-2 rounded bg-[#0a192f] text-white border border-blue-600"
+            >
+              {[1, 2, 3, 4, 5].map(num => (
+                <option key={num} value={num}>
+                  {num} Star{num > 1 && 's'}
+                </option>
+              ))}
+            </select>
+
+            <textarea
+              name="comment"
+              placeholder="Your Comment"
+              value={formData.comment}
+              onChange={handleChange}
+              required
+              className="w-full p-2 rounded bg-[#0a192f] text-white border border-blue-600 placeholder:text-blue-300"
+            />
+
+            <button
+              type="submit"
+              className="bg-blue-700 hover:bg-blue-600 text-white px-6 py-2 rounded-full transition w-full"
+            >
+              Submit Review
+            </button>
+          </form>
+        </div>
+      )}
+
+
     </section>
   );
 };
