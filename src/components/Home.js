@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import Reviews from './Reviews';
+// import Reviews from './Reviews';
 const letters = ['C', 'O', 'D', 'E', 'R'];
 
 const container = {
@@ -47,7 +47,7 @@ const Home = () => {
         Hi, I'm Eman 👋
       </motion.h1>
 
-      {/* Move this block higher in the JSX */}
+      {/*  */}
       <motion.div
         className="flex gap-4 text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent mt-3 mb-2"
         variants={container}
@@ -109,7 +109,7 @@ const Home = () => {
 
 
 
-      {/*  2 portion*/}
+      {/*  2nd portion*/}
 
 
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
@@ -200,7 +200,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <Reviews />
+      {/* <Reviews /> */}
 
 
       {/* Footer */}

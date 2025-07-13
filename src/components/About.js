@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section className="min-h-screen bg-blue-950 text-white px-8 py-20 flex flex-col items-center">
 
-      {/* Profile Section */}
+      {/*My  Profile Section */}
       <motion.div
         className="flex flex-col md:flex-row items-center gap-10 mb-12"
         initial={{ opacity: 0, y: 40 }}

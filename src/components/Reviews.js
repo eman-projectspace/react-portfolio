@@ -3,11 +3,15 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import { FaStar } from 'react-icons/fa';
 
+
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [formData, setFormData] = useState({ name: '', rating: 5, comment: '' });
   const [message, setMessage] = useState('');
   const [showForm, setShowForm] = useState(false);
+  const isAdmin = true; //  Only admin can delete
+
+
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/reviews')
@@ -23,15 +27,17 @@ const Reviews = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/reviews', formData);
-      setMessage('✅ Review submitted!');
+      const res = await axios.post('http://localhost:5000/api/reviews', formData);
+      localStorage.setItem(`review-${formData.name}`, res.data.review._id);
+
+      setMessage(' Review submitted!');
       setFormData({ name: '', rating: 5, comment: '' });
 
       // Refresh reviews
-      const res = await axios.get('http://localhost:5000/api/reviews');
-      setReviews(res.data);
+      const refreshRes = await axios.get('http://localhost:5000/api/reviews');
+      setReviews(refreshRes.data);
 
-      // ✅ Hide the form after successful submission
+      //  Hide the form after successful submission
       setShowForm(false);
     } catch (err) {
       setMessage('❌ Failed to submit review');
@@ -39,7 +45,15 @@ const Reviews = () => {
   };
 
 
-
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/reviews/${id}`);
+      // Remove deleted review from UI
+      setReviews(prev => prev.filter(review => review._id !== id));
+    } catch (error) {
+      console.error('❌ Error deleting review:', error);
+    }
+  };
 
   return (
     <section className="bg-[#0a192f] py-16 px-6 w-full text-white">
@@ -62,30 +76,6 @@ const Reviews = () => {
           Real feedback from real people who loved working with me.
         </motion.p>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {reviews.map((review, index) => (
-            <motion.div
-              key={review._id}
-              className="bg-blue-900/50 backdrop-blur-lg shadow-md rounded-xl p-6 border border-blue-700"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-            >
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="text-lg font-semibold text-white">{review.name}</h3>
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar
-                      key={i}
-                      className={`w-5 h-5 ${i < review.rating ? 'text-yellow-400' : 'text-blue-300'}`}
-                    />
-                  ))}
-                </div>
-              </div>
-              <p className="text-blue-100">{review.comment}</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
       <div className="text-center mt-10">
         <div className="text-center mt-10">
@@ -101,6 +91,44 @@ const Reviews = () => {
             {showForm ? 'Cancel' : ' Add Your Review'}
           </motion.button>
         </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {reviews.map((review, index) => {
+            const isOwner = localStorage.getItem(`review-${review.name}`) === review._id;
+
+            return (
+              <motion.div
+                key={review._id}
+                className="bg-blue-900/50 backdrop-blur-lg shadow-md rounded-xl p-6 border border-blue-700"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+              >
+                <div className="flex justify-between items-center mb-2">
+                  <h3 className="text-lg font-semibold text-white">{review.name}</h3>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar
+                        key={i}
+                        className={`w-5 h-5 ${i < review.rating ? 'text-yellow-400' : 'text-blue-300'}`}
+                      />
+                    ))}
+                    {(isAdmin || isOwner) && (
+                      <button
+                        onClick={() => handleDelete(review._id)}
+                        className="ml-2 text-red-400 hover:text-red-600 text-sm"
+                      >
+                        🗑️
+                      </button>
+                    )}
+                  </div>
+                </div>
+                <p className="text-blue-100">{review.comment}</p>
+              </motion.div>
+            );
+          })}
+
+        </div>
+
 
       </div>
 
@@ -148,9 +176,11 @@ const Reviews = () => {
             >
               Submit Review
             </button>
+
           </form>
         </div>
       )}
+
 
 
     </section>
