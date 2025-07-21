@@ -229,7 +229,7 @@ const Home = () => {
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/in/yourlinkedin"
+              href="www.linkedin.com/in/eman-waheed-84615b326"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#1E90FF] transition"
