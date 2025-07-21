@@ -163,8 +163,8 @@ const Contacts = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center text-center">
           <div className="flex items-center gap-2">
             <FiMail className="text-blue-400" />
-            <a href="mailto:emanwaheed001@gmail.com" className="hover:text-white underline">
-              emanwaheed001@gmail.com
+            <a href="mailto:emanwaheed.dev@gmail.com" className="hover:text-white underline">
+              emanwaheed.dev@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-2">
