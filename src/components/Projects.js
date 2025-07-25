@@ -10,6 +10,13 @@ const projects = [
     demoLink: 'https://baroque-mern.vercel.app/'
   },
   {
+    title: 'Baroque ',
+    description: 'A stylish and fully responsive Baroque fashion website built using HTML, CSS, and JavaScript to showcase elegant dress collections.',
+    tech: ['HTML', 'CSS', 'JavaScript',],
+    codeLink: 'https://github.com/eman-projectspace/BAROQUE',
+    demoLink: 'https://baroque-topaz.vercel.app/'
+  },
+  {
     title: 'J .',
     description: 'Full-stack e-commerce dress website built using Html, Css, Bootstrap.',
     tech: ['Html', 'Css', 'Bootstrap'],
