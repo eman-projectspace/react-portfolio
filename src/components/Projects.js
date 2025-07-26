@@ -50,7 +50,17 @@ const projects = [
     tech: ['HTML', 'CSS', 'JavaScript', 'Blade', 'Php', 'Laravel', 'MySql'],
     codeLink: 'https://github.com/eman-projectspace/Laravel-Website',
     demoLink: 'https://github.com/eman-projectspace/Laravel-Website'
+  },
+  {
+    title: 'Shoe Landing Page',
+    description: 'This is a fully responsive product landing page created using HTML and CSS. Clean layout, modern design, mobile-friendly..',
+    tech: ['HTML', 'CSS'],
+    codeLink: 'https://github.com/eman-projectspace/shoe-landing-page',
+    demoLink: 'https://shoe-landing-page-six.vercel.app/'
   }
+
+
+
 ];
 
 const Projects = () => {
