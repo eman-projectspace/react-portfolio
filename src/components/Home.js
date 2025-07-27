@@ -28,14 +28,14 @@ const Home = () => {
     <section className="min-h-screen bg-[#0a192f] text-white flex flex-col items-center justify-center px-4 text-center overflow-x-hidden">
 
       {/* Profile Image */}
-      <motion.img
-        src="/Eman.webp"
-        alt="Eman"
-        className="w-36 h-36 rounded-full border-4 border-[#1E90FF] shadow-lg mb-6 mt-24"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
+      <motion.div
+        className="text-[5rem] mb-6 mt-24"
+        initial={{ scale: 0.8, rotate: -10, opacity: 0 }}
+        animate={{ scale: 1, rotate: 0, opacity: 1 }}
         transition={{ duration: 1 }}
-      />
+      >
+        👩‍💻
+      </motion.div>
 
       {/* Name & Title */}
       <motion.h1
@@ -44,7 +44,7 @@ const Home = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        Hi, I'm Eman 👋
+        Hi, I'm Eman
       </motion.h1>
 
       {/*  */}
