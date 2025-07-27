@@ -57,7 +57,15 @@ const projects = [
     tech: ['HTML', 'CSS'],
     codeLink: 'https://github.com/eman-projectspace/shoe-landing-page',
     demoLink: 'https://shoe-landing-page-six.vercel.app/'
+  },
+  {
+    title: 'Ultra Edit Clone',
+    description: 'A responsive clone of the UltraEdit download page using HTML and CSS. Built for learning and UI design practice.',
+    tech: ['HTML', 'CSS'],
+    codeLink: 'https://github.com/eman-projectspace/ultraEdit-clone',
+    demoLink: 'https://ultra-edit-clone-sage.vercel.app/'
   }
+
 
 
 
