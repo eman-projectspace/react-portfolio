@@ -38,13 +38,6 @@ const projects = [
     demoLink: 'https://rock-papper-scissor-git-main-eman-projectspaces-projects.vercel.app/'
   },
   {
-    title: 'To-Do List',
-    description: 'Dynamic task manager using JavaScript.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    codeLink: 'https://github.com/eman-projectspace/todo-list',
-    demoLink: 'https://todo-list-git-main-eman-projectspaces-projects.vercel.app/'
-  },
-  {
     title: 'Book Store Website',
     description: 'Dynamic Website using Php Laravel.',
     tech: ['HTML', 'CSS', 'JavaScript', 'Blade', 'Php', 'Laravel', 'MySql'],
