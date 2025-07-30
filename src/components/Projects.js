@@ -2,13 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const projects = [
-  {
-    title: 'Baroque MERN Website',
-    description: 'Full-stack e-commerce dress website built using React, Node.js, Express, and MongoDB.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
-    codeLink: 'https://github.com/eman-projectspace/Baroque-mern',
-    demoLink: 'https://baroque-mern.vercel.app/'
-  },
+
   {
     title: 'Baroque ',
     description: 'A stylish and fully responsive Baroque fashion website built using HTML, CSS, and JavaScript to showcase elegant dress collections.',
@@ -24,11 +18,32 @@ const projects = [
     demoLink: 'https://j-website-eman-projectspaces-projects.vercel.app/'
   },
   {
+    title: 'Shoe Landing Page',
+    description: 'This is a fully responsive product landing page created using HTML and CSS. Clean layout, modern design, mobile-friendly..',
+    tech: ['HTML', 'CSS'],
+    codeLink: 'https://github.com/eman-projectspace/shoe-landing-page',
+    demoLink: 'https://shoe-landing-page-six.vercel.app/'
+  },
+  {
+    title: 'Ultra Edit Clone',
+    description: 'A responsive clone of the UltraEdit download page using HTML and CSS. Built for learning and UI design practice.',
+    tech: ['HTML', 'CSS'],
+    codeLink: 'https://github.com/eman-projectspace/ultraEdit-clone',
+    demoLink: 'https://ultra-edit-clone-sage.vercel.app/'
+  },
+  {
     title: 'YouTube Clone',
     description: 'Static clone of the YouTube homepage using only HTML & CSS.',
     tech: ['HTML', 'CSS'],
     codeLink: 'https://github.com/eman-projectspace/youtube-clone',
     demoLink: 'https://youtube-clone-blue-iota.vercel.app/'
+  },
+  {
+    title: 'Baroque MERN Website',
+    description: 'Full-stack e-commerce dress website built using React, Node.js, Express, and MongoDB.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
+    codeLink: 'https://github.com/eman-projectspace/Baroque-mern',
+    demoLink: 'https://baroque-mern.vercel.app/'
   },
   {
     title: 'Rock Paper Scissors',
@@ -43,20 +58,6 @@ const projects = [
     tech: ['HTML', 'CSS', 'JavaScript', 'Blade', 'Php', 'Laravel', 'MySql'],
     codeLink: 'https://github.com/eman-projectspace/Laravel-Website',
     demoLink: 'https://github.com/eman-projectspace/Laravel-Website'
-  },
-  {
-    title: 'Shoe Landing Page',
-    description: 'This is a fully responsive product landing page created using HTML and CSS. Clean layout, modern design, mobile-friendly..',
-    tech: ['HTML', 'CSS'],
-    codeLink: 'https://github.com/eman-projectspace/shoe-landing-page',
-    demoLink: 'https://shoe-landing-page-six.vercel.app/'
-  },
-  {
-    title: 'Ultra Edit Clone',
-    description: 'A responsive clone of the UltraEdit download page using HTML and CSS. Built for learning and UI design practice.',
-    tech: ['HTML', 'CSS'],
-    codeLink: 'https://github.com/eman-projectspace/ultraEdit-clone',
-    demoLink: 'https://ultra-edit-clone-sage.vercel.app/'
   }
 
 
