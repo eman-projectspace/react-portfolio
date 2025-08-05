@@ -92,7 +92,7 @@ const Home = () => {
         transition={{ delay: 1.2, duration: 0.6 }}
       >
         <a
-          href="/Eman Waheed Dev.pdf"
+          href="/Eman Waheed Cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#0a192f] transition"
