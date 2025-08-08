@@ -24,8 +24,8 @@ const projects = [
     title: 'Baroque-Frontend',
     description: 'A modern and fully responsive Baroque fashion website built using React and Tailwind.',
     tech: ['React', 'Tailwind Css', 'JavaScript', 'React Router'],
-    codeLink: 'https://github.com/eman-projectspace/Ecommerce-Frontend',
-    demoLink: 'https://ecommerce-frontend-seven-psi.vercel.app/',
+    codeLink: 'https://github.com/eman-projectspace/Baroque-mern',
+    demoLink: 'https://baroque-mern.vercel.app/',
     image: '/baroque.PNG',
   },
   {
