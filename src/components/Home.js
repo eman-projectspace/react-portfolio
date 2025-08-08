@@ -18,6 +18,41 @@ const item = {
   visible: { opacity: 1, x: 0, y: 0, rotate: 0, transition: { type: 'spring', stiffness: 100 } }
 };
 
+// 
+const projects = [
+  {
+    title: 'Baroque-Frontend',
+    description: 'A modern and fully responsive Baroque fashion website built using React and Tailwind.',
+    tech: ['React', 'Tailwind Css', 'JavaScript', 'React Router'],
+    codeLink: 'https://github.com/eman-projectspace/Ecommerce-Frontend',
+    demoLink: 'https://ecommerce-frontend-seven-psi.vercel.app/',
+    image: '/baroque.PNG',
+  },
+  {
+    title: 'Ultra Edit Clone',
+    description: 'A responsive clone of the UltraEdit download page using HTML and CSS. Built for learning and UI design practice.',
+    tech: ['HTML', 'CSS'],
+    codeLink: 'https://github.com/eman-projectspace/ultraEdit-clone',
+    demoLink: 'https://ultra-edit-clone-sage.vercel.app/',
+    image: '/ultra-edit.jpeg',
+  },
+  {
+    title: 'J .',
+    description: 'Full-stack e-commerce dress website built using Html, Css, Bootstrap.',
+    tech: ['Html', 'Css', 'Bootstrap'],
+    codeLink: 'https://github.com/eman-projectspace/Laravel-Website',
+    demoLink: 'https://j-website-eman-projectspaces-projects.vercel.app/',
+    image: '/j. - Copy.PNG',
+  },
+  {
+    title: 'Shoe Landing Page',
+    description: 'This is a fully responsive product landing page created using HTML and CSS. Clean layout, modern design, mobile-friendly..',
+    tech: ['HTML', 'CSS'],
+    codeLink: 'https://github.com/eman-projectspace/shoe-landing-page',
+    demoLink: 'https://shoe-landing-page-six.vercel.app/',
+    image: '/shoe-landing.jpeg',
+  },
+];
 
 
 
@@ -109,7 +144,7 @@ const Home = () => {
 
 
 
-      {/*  2nd portion*/}
+      {/*  small animated blue dots*/}
 
 
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
@@ -135,7 +170,7 @@ const Home = () => {
         ))}
       </div>
 
-      {/* 3rd */}
+      {/*2nd  */}
 
       {/* Skills Section */}
       <section className=" w-full py-16 px-6">
@@ -160,22 +195,107 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Final CTA */}
-      <section className=" w-full py-16 px-6 text-center">
+      {/* 3rd Projects */}
+      <section className="max-w-6xl mx-auto py-20 px-6 text-white">
+        <h2 className="text-3xl font-bold mb-12 text-center tracking-wide">🚀 My Projects</h2>
+
+        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          {projects.map(({ title, description, tech, codeLink, demoLink, image }, index) => (
+            <motion.div
+              key={index}
+              className="bg-[#112240] rounded-xl shadow-xl flex flex-col overflow-hidden hover:shadow-blue-500 transition-shadow duration-300"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true }}
+            >
+              {/* Image */}
+              <img
+                src={image}
+                alt={`${title} Screenshot`}
+                className="w-full h-48 object-cover rounded-t-xl"
+                loading="lazy"
+              />
+
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-semibold mb-3 text-white hover:text-blue-400 transition-colors cursor-pointer">
+                  {title}
+                </h3>
+                <p className="text-sm text-gray-300 mb-6 flex-grow">{description}</p>
+
+                <div className="mb-5">
+                  <h4 className="font-semibold mb-2 text-gray-400 uppercase tracking-wide text-xs">Tech Stack:</h4>
+                  <ul className="flex flex-wrap gap-2">
+                    {tech.map((t, i) => (
+                      <li
+                        key={i}
+                        className="text-xs bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full px-3 py-1 font-semibold text-white shadow-md"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-auto flex justify-between items-center">
+                  <a
+                    href={codeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-600 text-sm font-semibold transition-colors"
+                  >
+                    Code
+                  </a>
+                  <a
+                    href={demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-600 text-sm font-semibold transition-colors"
+                  >
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* View More Button */}
+        <div className="mt-12 flex justify-center">
+
+          <a
+            href="/projects"
+            className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:from-cyan-400 hover:to-blue-500 transition-colors"
+          >
+            View More Projects
+          </a>
+        </div>
+      </section>
+
+
+
+      {/* 4th Final CTA  Get in touch*/}
+      <section className="w-full py-20 px-6 bg-gradient-to-r from-purple-900 via-indigo-900 to-blue-900 text-white">
         <motion.div
-          className="max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Let's Build Something Amazing</h2>
-          <p className="text-blue-300 mb-6">
-            I’m open to freelance projects, internships, and collaborations. Let’s bring your vision to life.
-          </p>
+          <div className="md:w-2/3 text-center md:text-left">
+            <h2 className="text-4xl font-extrabold mb-4 tracking-wide">
+              Let's Build Something Amazing Together
+            </h2>
+            <p className="text-lg text-purple-300 max-w-xl leading-relaxed">
+              Whether you need freelance help, internships, or collaborations — I’m here to bring your vision alive with clean, performant web apps.
+            </p>
+          </div>
+
           <a
             href="/contact"
-            className="bg-blue-700 px-8 py-3 text-white rounded-full hover:bg-blue-600 transition"
+            className="inline-block bg-white text-indigo-900 font-bold px-10 py-4 rounded-full shadow-lg hover:bg-gray-100 transition"
           >
             Get In Touch
           </a>
@@ -183,8 +303,9 @@ const Home = () => {
       </section>
 
 
-      {/* Testimonials */}
-      <section className=" w-full py-16 px-6">
+
+      {/* 5th Testimonials Quote */}
+      <section className=" w-full py-20 px-6">
         <motion.div
           className="max-w-3xl mx-auto text-center"
           initial={{ opacity: 0, y: 30 }}

@@ -4,11 +4,18 @@ import { motion } from 'framer-motion';
 const projects = [
 
   {
-    title: 'Baroque ',
-    description: 'A stylish and fully responsive Baroque fashion website built using HTML, CSS, and JavaScript to showcase elegant dress collections.',
-    tech: ['HTML', 'CSS', 'JavaScript',],
+    title: 'Baroque',
+    description: 'A stylish and fully responsive Baroque fashion website built using pure HTML, CSS, and JavaScript to showcase elegant dress collections.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
     codeLink: 'https://github.com/eman-projectspace/BAROQUE',
     demoLink: 'https://baroque-topaz.vercel.app/'
+  },
+  {
+    title: 'Baroque-Frontend',
+    description: 'A modern and fully responsive Baroque fashion website built using React along with HTML, CSS, and JavaScript to enhance user experience and interactivity.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind'],
+    codeLink: 'https://github.com/eman-projectspace/Ecommerce-Frontend',
+    demoLink: 'https://ecommerce-frontend-seven-psi.vercel.app/'
   },
   {
     title: 'J .',
