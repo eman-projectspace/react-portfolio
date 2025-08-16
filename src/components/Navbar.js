@@ -59,9 +59,8 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">E</span>
-              </div>
+
+
               <Link to="/" className="text-xl font-bold tracking-wider">
                 <span className="text-blue-300">Code</span>
                 <span className="text-white"> with Eman</span>

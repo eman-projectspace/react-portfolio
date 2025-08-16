@@ -27,7 +27,7 @@ const About = () => {
       color: 'from-blue-500 to-cyan-400'
     },
     {
-      year: '2024',
+      year: '2025',
       title: 'Web Development Course',
       duration: '6 Months',
       institution: 'MERN Stack Training',
@@ -36,7 +36,7 @@ const About = () => {
       color: 'from-green-500 to-emerald-400'
     },
     {
-      year: '2024',
+      year: '2025',
       title: 'Navttac Internship',
       duration: '3 Months',
       institution: 'Government Training Program',

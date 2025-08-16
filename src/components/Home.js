@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
+import Projects from './Projects';
 
 // import Reviews from './Reviews';
 const letters = ['C', 'O', 'D', 'E', 'R'];
@@ -278,7 +279,10 @@ const Home = () => {
 
 
 
-      {/* 4th Final CTA  Get in touch*/}
+      {/* 4th Projects Section */}
+      <Projects />
+
+      {/* 5th Final CTA  Get in touch*/}
       <section className="w-full py-20 px-6 bg-gradient-to-r from-purple-900 via-indigo-900 to-blue-900 text-white">
         <motion.div
           className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
