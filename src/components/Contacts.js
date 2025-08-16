@@ -47,7 +47,7 @@ const Contacts = () => {
     {
       icon: FiLinkedin,
       name: "LinkedIn",
-      url: "linkedin.com/in/eman-waheed-84615b326",
+      url: "https://www.linkedin.com/in/eman-waheed-84615b326/",
       color: "hover:from-blue-600 to-blue-700"
     },
     {

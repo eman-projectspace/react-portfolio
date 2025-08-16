@@ -80,9 +80,9 @@ const Skills = () => {
       skills: [
         { name: 'Git & GitHub', level: 85, color: '#F05032' },
         { name: 'VS Code', level: 90, color: '#007ACC' },
-        { name: 'Figma', level: 75, color: '#F24E1E' },
+        { name: 'Figma', level: 85, color: '#F24E1E' },
         { name: 'Vercel', level: 80, color: '#000000' },
-        { name: 'Firebase', level: 70, color: '#FFCA28' }
+        { name: 'Firebase', level: 50, color: '#FFCA28' }
       ]
     },
     {

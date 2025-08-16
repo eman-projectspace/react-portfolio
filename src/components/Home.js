@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
-import Projects from './Projects';
 
 // import Reviews from './Reviews';
 const letters = ['C', 'O', 'D', 'E', 'R'];
@@ -107,7 +106,6 @@ const Home = () => {
 
 
 
-
       <motion.p
         className="mt-2 text-xl font-medium text-cyan-400 drop-shadow-md"
         initial={{ opacity: 0 }}
@@ -145,8 +143,6 @@ const Home = () => {
 
 
 
-
-
       {/*  small animated blue dots*/}
 
 
@@ -176,7 +172,7 @@ const Home = () => {
       {/*2nd  */}
 
       {/* Skills Section */}
-      <section className="w-full py-24 px-6">   {/* ⬅️ was py-16 */}
+      <section className="w-full py-24 px-6">
         <motion.div
           className="max-w-5xl mx-auto text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -278,9 +274,6 @@ const Home = () => {
       </section>
 
 
-
-      {/* 4th Projects Section */}
-      <Projects />
 
       {/* 5th Final CTA  Get in touch*/}
       <section className="w-full py-20 px-6 bg-gradient-to-r from-purple-900 via-indigo-900 to-blue-900 text-white">

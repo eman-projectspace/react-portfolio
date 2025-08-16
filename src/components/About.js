@@ -126,9 +126,6 @@ const About = () => {
           <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
             About Me
           </h1>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
-            Passionate Full Stack Developer from Pakistan, crafting beautiful and functional web experiences
-          </p>
         </motion.div>
 
         {/* Profile Section */}
@@ -177,7 +174,7 @@ const About = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Hello! I'm a passionate Full Stack Developer based in Pakistan, specializing in creating responsive and user-friendly web applications. I love turning complex problems into simple, beautiful, and intuitive solutions.
+              Hello! I'm a passionate Full Stack Developer, specializing in creating responsive and user-friendly web applications. I love turning complex problems into simple, beautiful, and intuitive solutions.
             </motion.p>
 
             <motion.p
