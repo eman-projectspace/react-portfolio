@@ -14,7 +14,7 @@ const About = () => {
         viewport={{ once: true }}
       >
         <motion.img
-          src="/images-profile.png"
+          src="/code-1076533_1280.jpg"
           alt="Eman"
           className="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-blue-700 shadow-lg"
           initial={{ scale: 0.8, opacity: 0 }}

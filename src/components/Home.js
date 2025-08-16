@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Typewriter } from 'react-simple-typewriter';
+
 // import Reviews from './Reviews';
 const letters = ['C', 'O', 'D', 'E', 'R'];
 
@@ -65,9 +67,9 @@ const Home = () => {
       {/* Profile Image */}
       <motion.div
         className="text-[5rem] mb-6 mt-24"
-        initial={{ scale: 0.8, rotate: -10, opacity: 0 }}
+        initial={{ scale: 0, rotate: -15, opacity: 0 }}
         animate={{ scale: 1, rotate: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ type: "spring", stiffness: 200, damping: 10 }}
       >
         👩‍💻
       </motion.div>
@@ -84,13 +86,19 @@ const Home = () => {
 
       {/*  */}
       <motion.div
-        className="flex gap-4 text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent mt-3 mb-2"
+        className="flex gap-2 text-5xl font-bold mt-3 mb-2"
         variants={container}
         initial="hidden"
         animate="visible"
       >
         {letters.map((char, index) => (
-          <motion.span key={index} variants={item}>
+          <motion.span
+            key={index}
+            variants={item}
+            whileHover={{ scale: 1.3, color: "#38bdf8" }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent cursor-pointer"
+          >
             {char}
           </motion.span>
         ))}
@@ -98,49 +106,43 @@ const Home = () => {
 
 
 
+
       <motion.p
-        className="mt-2 text-xl text-[#8892b0] font-medium"
+        className="mt-2 text-xl font-medium text-cyan-400 drop-shadow-md"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.8 }}
+        whileHover={{ scale: 1.05 }}
       >
         Full Stack Web Developer | React Specialist
       </motion.p>
 
 
 
+
       {/* Tagline */}
       <motion.p
-        className="max-w-2xl mt-4 text-[#ccd6f6] leading-relaxed"
+        className="max-w-2xl mt-4 text-[#ccd6f6] leading-relaxed text-lg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 1 }}
       >
-        I turn ideas into interactive, high-performing websites using React & Tailwind. Clean UI. Fast. Responsive.
+        <Typewriter
+          words={[
+            "I turn ideas into interactive, high-performing websites.",
+            "Clean UI. Fast. Responsive.",
+            "React & Tailwind at their best 🚀"
+          ]}
+          loop={0}
+          cursor
+          cursorStyle="|"
+          typeSpeed={60}
+          deleteSpeed={40}
+          delaySpeed={1500}
+        />
       </motion.p>
 
-      {/* Buttons */}
-      <motion.div
-        className="mt-6 flex flex-wrap gap-4 justify-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-      >
-        <a
-          href="/Eman Waheed Cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#0a192f] transition"
-        >
-          View Resume
-        </a>
-        <a
-          href="/contact"
-          className="text-[#8892b0] px-6 py-2 rounded-full border border-[#112240] hover:text-white hover:border-white transition"
-        >
-          Contact Me
-        </a>
-      </motion.div>
+
 
 
 
@@ -173,7 +175,7 @@ const Home = () => {
       {/*2nd  */}
 
       {/* Skills Section */}
-      <section className=" w-full py-16 px-6">
+      <section className="w-full py-24 px-6">   {/* ⬅️ was py-16 */}
         <motion.div
           className="max-w-5xl mx-auto text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -181,8 +183,8 @@ const Home = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-white mb-8">🛠️ Skills</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-blue-300 text-lg">
+          <h2 className="text-3xl font-bold text-white mb-12">🛠️ Skills</h2> {/* ⬅️ was mb-8 */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-blue-300 text-lg"> {/* ⬅️ was gap-6 */}
             <span>React</span>
             <span>Tailwind CSS</span>
             <span>JavaScript</span>
@@ -194,6 +196,7 @@ const Home = () => {
           </div>
         </motion.div>
       </section>
+
 
       {/* 3rd Projects */}
       <section className="max-w-6xl mx-auto py-20 px-6 text-white">
