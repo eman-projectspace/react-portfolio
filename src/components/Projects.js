@@ -117,7 +117,21 @@ const projects = [
     featured: false,
     difficulty: 'Advanced',
     status: 'Development'
+  },
+  {
+    id: 9,
+    title: 'Shop from Home',
+    description: 'React-based e-commerce website where users can browse, filter, and purchase products online.',
+    tech: ['React', 'Tailwind CSS', 'JavaScript'],
+    codeLink: 'https://github.com/eman-projectspace/shop-from-home',
+    demoLink: 'https://shop-from-home.vercel.app/',
+    image: '/shop-from-home.PNG',
+    category: 'E-commerce',
+    featured: true,
+    difficulty: 'Intermediate',
+    status: 'Live'
   }
+
 ];
 
 const categories = ['All', 'E-commerce', 'Landing Page', 'Clone', 'Full-Stack', 'Game'];
