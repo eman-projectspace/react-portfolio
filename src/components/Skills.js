@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaRobot, FaTerminal } from 'react-icons/fa';
+import { SiVite } from 'react-icons/si';
+
 import {
   FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaLaravel,
   FaGithub, FaFigma, FaCode,
-  FaBrain, FaRocket, FaTools, FaServer, FaPalette
+  FaRocket, FaTools, FaServer, FaPalette
 } from 'react-icons/fa';
 import {
   SiTailwindcss, SiBootstrap, SiExpress, SiMongodb,
   SiPhp, SiMysql, SiVercel,
-  SiFirebase, SiTypescript, SiOpenai,
-  SiCanva, SiNotion
+  SiOpenai,
 } from 'react-icons/si';
 
 const Skills = () => {
@@ -32,12 +34,11 @@ const Skills = () => {
     'VS Code': FaCode,
     'Figma': FaFigma,
     'Vercel': SiVercel,
-    'Firebase': SiFirebase,
-    'TypeScript': SiTypescript,
     'ChatGPT / OpenAI': SiOpenai,
-    'Google Bard': FaBrain,
-    'Canva AI': SiCanva,
-    'Notion AI': SiNotion
+    'Vite': SiVite,
+    'Cursor AI': FaRobot,
+    'Trae AI': FaRobot,
+    'Amazon CLI': FaTerminal,
   };
 
   const categories = [
@@ -49,11 +50,12 @@ const Skills = () => {
       borderColor: 'border-blue-600',
       skills: [
         { name: 'HTML5', level: 95, color: '#E34F26' },
-        { name: 'CSS3', level: 90, color: '#1572B6' },
-        { name: 'JavaScript', level: 85, color: '#F7DF1E' },
-        { name: 'React.js', level: 80, color: '#61DAFB' },
-        { name: 'Tailwind CSS', level: 85, color: '#06B6D4' },
-        { name: 'Bootstrap', level: 75, color: '#7952B3' }
+        { name: 'CSS3', level: 95, color: '#1572B6' },
+        { name: 'JavaScript', level: 80, color: '#F7DF1E' },
+        { name: 'React.js', level: 85, color: '#61DAFB' },
+        { name: 'Vite', level: 80, color: '#646CFF' },
+        { name: 'Tailwind CSS', level: 95, color: '#06B6D4' },
+        { name: 'Bootstrap', level: 90, color: '#7952B3' }
       ]
     },
     {
@@ -63,10 +65,10 @@ const Skills = () => {
       bgColor: 'bg-green-900/50',
       borderColor: 'border-green-600',
       skills: [
-        { name: 'Node.js', level: 70, color: '#339933' },
-        { name: 'Express.js', level: 65, color: '#000000' },
+        { name: 'Node.js', level: 75, color: '#339933' },
+        { name: 'Express.js', level: 70, color: '#000000' },
         { name: 'Laravel', level: 60, color: '#FF2D20' },
-        { name: 'MongoDB', level: 55, color: '#47A248' },
+        { name: 'MongoDB', level: 85, color: '#47A248' },
         { name: 'PHP', level: 70, color: '#777BB4' },
         { name: 'MySQL', level: 65, color: '#4479A1' }
       ]
@@ -78,25 +80,23 @@ const Skills = () => {
       bgColor: 'bg-purple-900/50',
       borderColor: 'border-purple-600',
       skills: [
-        { name: 'Git & GitHub', level: 85, color: '#F05032' },
-        { name: 'VS Code', level: 90, color: '#007ACC' },
+        { name: 'Git & GitHub', level: 90, color: '#F05032' },
+        { name: 'VS Code', level: 95, color: '#007ACC' },
         { name: 'Figma', level: 85, color: '#F24E1E' },
-        { name: 'Vercel', level: 80, color: '#000000' },
-        { name: 'Firebase', level: 50, color: '#FFCA28' }
+        { name: 'Vercel', level: 95, color: '#000000' },
       ]
     },
     {
-      title: 'Currently Learning',
-      icon: FaBrain,
-      color: 'from-orange-500 to-red-400',
-      bgColor: 'bg-orange-900/50',
-      borderColor: 'border-orange-600',
+      title: 'AI & Cloud Tools',
+      icon: FaRobot,
+      color: 'from-pink-500 to-purple-400',
+      bgColor: 'bg-pink-900/50',
+      borderColor: 'border-pink-600',
       skills: [
-        { name: 'TypeScript', level: 40, color: '#3178C6' },
-        { name: 'ChatGPT / OpenAI', level: 60, color: '#10A37F' },
-        { name: 'Google Bard', level: 55, color: '#4285F4' },
-        { name: 'Canva AI', level: 50, color: '#00C4CC' },
-        { name: 'Notion AI', level: 45, color: '#000000' }
+        { name: 'ChatGPT / OpenAI', level: 90, color: '#10A37F' },
+        { name: 'Cursor AI', level: 85, color: '#10A37F' },
+        { name: 'Trae AI', level: 80, color: '#9333EA' },
+        { name: 'Amazon CLI', level: 85, color: '#FF9900' }
       ]
     }
   ];
@@ -264,31 +264,7 @@ const Skills = () => {
           </div>
         </motion.div>
 
-        {/* Skill Level Legend */}
-        <motion.div
-          className="mt-12 flex flex-wrap justify-center gap-6 text-sm"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            <span className="text-blue-200">Expert (90-100%)</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-            <span className="text-blue-200">Advanced (80-89%)</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            <span className="text-blue-200">Intermediate (60-79%)</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-            <span className="text-blue-200">Learning (40-59%)</span>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

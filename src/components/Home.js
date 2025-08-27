@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
 
 // import Reviews from './Reviews';
-const letters = ['C', 'O', 'D', 'E', 'R'];
+const letters = ['C', 'O', 'D', 'E', '', '', 'C', 'R', 'A', 'F', 'T', 'S'];
 
 const container = {
   hidden: {},
@@ -182,12 +182,12 @@ const Home = () => {
         >
           <h2 className="text-3xl font-bold text-white mb-12">🛠️ Skills</h2> {/* ⬅️ was mb-8 */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-blue-300 text-lg"> {/* ⬅️ was gap-6 */}
-            <span>React</span>
+            <span>React+Vite</span>
             <span>Tailwind CSS</span>
             <span>JavaScript</span>
             <span>HTML5 & CSS3</span>
             <span>Git & GitHub</span>
-            <span>Firebase</span>
+            <span>Php/Laravel</span>
             <span>REST APIs</span>
             <span>Figma to Code</span>
           </div>
