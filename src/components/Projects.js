@@ -16,15 +16,15 @@ import {
 const projects = [
   {
     id: 1,
-    title: 'Baroque',
-    description: 'A stylish and fully responsive Baroque fashion website built using pure HTML, CSS, and JavaScript to showcase elegant dress collections.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    codeLink: 'https://github.com/eman-projectspace/BAROQUE',
-    demoLink: 'https://baroque-topaz.vercel.app/',
+    title: 'Baroque MERN Website',
+    description: 'Full-stack e-commerce dress website built using React, Node.js, Express, and MongoDB.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
+    codeLink: 'https://github.com/eman-projectspace/Baroque-mern',
+    demoLink: 'https://baroque-mern.vercel.app/',
     image: '/baroque.PNG',
-    category: 'E-commerce',
+    category: 'Full-Stack',
     featured: true,
-    difficulty: 'Intermediate',
+    difficulty: 'Advanced',
     status: 'Live'
   },
   {
@@ -42,29 +42,29 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Shoe Landing Page',
-    description: 'This is a fully responsive product landing page created using HTML and CSS. Clean layout, modern design, mobile-friendly.',
-    tech: ['HTML', 'CSS'],
-    codeLink: 'https://github.com/eman-projectspace/shoe-landing-page',
-    demoLink: 'https://shoe-landing-page-six.vercel.app/',
-    image: '/shoe-landing.jpeg',
-    category: 'Landing Page',
-    featured: false,
-    difficulty: 'Beginner',
+    title: 'Baroque',
+    description: 'A stylish and fully responsive Baroque fashion website built using pure HTML, CSS, and JavaScript to showcase elegant dress collections.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    codeLink: 'https://github.com/eman-projectspace/BAROQUE',
+    demoLink: 'twitter-clone-tailwind-rho.vercel.app',
+    image: '/baroque.PNG',
+    category: 'E-commerce',
+    featured: true,
+    difficulty: 'Intermediate',
     status: 'Live'
   },
   {
     id: 4,
-    title: 'Ultra Edit Clone',
-    description: 'A responsive clone of the UltraEdit download page using HTML and CSS. Built for learning and UI design practice.',
-    tech: ['HTML', 'CSS'],
-    codeLink: 'https://github.com/eman-projectspace/ultraEdit-clone',
-    demoLink: 'https://ultra-edit-clone-sage.vercel.app/',
-    image: '/ultra-edit.jpeg',
-    category: 'Clone',
+    title: 'Book Store Website',
+    description: 'Dynamic Website using Php Laravel.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Blade', 'Php', 'Laravel', 'MySql'],
+    codeLink: 'https://github.com/eman-projectspace/Laravel-Website',
+    demoLink: 'https://github.com/eman-projectspace/Laravel-Website',
+    image: '/pic2.jpg',
+    category: 'Full-Stack',
     featured: false,
-    difficulty: 'Beginner',
-    status: 'Live'
+    difficulty: 'Advanced',
+    status: 'Development'
   },
   {
     id: 5,
@@ -81,19 +81,6 @@ const projects = [
   },
   {
     id: 6,
-    title: 'Baroque MERN Website',
-    description: 'Full-stack e-commerce dress website built using React, Node.js, Express, and MongoDB.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
-    codeLink: 'https://github.com/eman-projectspace/Baroque-mern',
-    demoLink: 'https://baroque-mern.vercel.app/',
-    image: '/baroque.PNG',
-    category: 'Full-Stack',
-    featured: true,
-    difficulty: 'Advanced',
-    status: 'Live'
-  },
-  {
-    id: 7,
     title: 'Rock Paper Scissors',
     description: 'A fun interactive game using JavaScript.',
     tech: ['HTML', 'CSS', 'JavaScript'],
@@ -105,18 +92,32 @@ const projects = [
     difficulty: 'Beginner',
     status: 'Live'
   },
+
+  {
+    id: 7,
+    title: 'Shoe Landing Page',
+    description: 'This is a fully responsive product landing page created using HTML and CSS. Clean layout, modern design, mobile-friendly.',
+    tech: ['HTML', 'CSS'],
+    codeLink: 'https://github.com/eman-projectspace/shoe-landing-page',
+    demoLink: 'https://shoe-landing-page-six.vercel.app/',
+    image: '/shoe-landing.jpeg',
+    category: 'Landing Page',
+    featured: false,
+    difficulty: 'Beginner',
+    status: 'Live'
+  },
   {
     id: 8,
-    title: 'Book Store Website',
-    description: 'Dynamic Website using Php Laravel.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Blade', 'Php', 'Laravel', 'MySql'],
-    codeLink: 'https://github.com/eman-projectspace/Laravel-Website',
-    demoLink: 'https://github.com/eman-projectspace/Laravel-Website',
-    image: '/pic2.jpg',
-    category: 'Full-Stack',
+    title: 'Ultra Edit Clone',
+    description: 'A responsive clone of the UltraEdit download page using HTML and CSS. Built for learning and UI design practice.',
+    tech: ['HTML', 'CSS'],
+    codeLink: 'https://github.com/eman-projectspace/ultraEdit-clone',
+    demoLink: 'https://ultra-edit-clone-sage.vercel.app/',
+    image: '/ultra-edit.jpeg',
+    category: 'Clone',
     featured: false,
-    difficulty: 'Advanced',
-    status: 'Development'
+    difficulty: 'Beginner',
+    status: 'Live'
   },
   {
     id: 9,
@@ -130,7 +131,21 @@ const projects = [
     featured: true,
     difficulty: 'Intermediate',
     status: 'Live'
+  },
+  {
+    id: 10,
+    title: 'Twitter Clone',
+    description: 'responsive Twitter clone built with Tailwind CSS, replicating the core UI and layout of the social media platform.',
+    tech: ['React', 'Tailwind CSS'],
+    codeLink: 'https://github.com/eman-projectspace/twitter-clone-tailwind',
+    demoLink: 'twitter-clone-tailwind-rho.vercel.app',
+    image: '/Twitter-Clone.PNG',
+    category: 'Clone',
+    featured: true,
+    difficulty: 'Intermediate',
+    status: 'Live'
   }
+  // 
 
 ];
 
@@ -143,11 +158,20 @@ const Projects = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [hoveredProject, setHoveredProject] = useState(null);
 
-  const filteredProjects = projects.filter(project => {
-    const categoryMatch = selectedCategory === 'All' || project.category === selectedCategory;
-    const difficultyMatch = selectedDifficulty === 'All' || project.difficulty === selectedDifficulty;
-    return categoryMatch && difficultyMatch;
-  });
+  // const filteredProjects = projects.filter(project => {
+  //   const categoryMatch = selectedCategory === 'All' || project.category === selectedCategory;
+  //   const difficultyMatch = selectedDifficulty === 'All' || project.difficulty === selectedDifficulty;
+  //   return categoryMatch && difficultyMatch;
+  // });
+
+  const filteredProjects = projects
+    .filter(project => {
+      const categoryMatch = selectedCategory === 'All' || project.category === selectedCategory;
+      const difficultyMatch = selectedDifficulty === 'All' || project.difficulty === selectedDifficulty;
+      return categoryMatch && difficultyMatch;
+    })
+    .sort((a, b) => b.id - a.id); // Newest first
+
 
   const getCategoryIcon = (category) => {
     switch (category) {

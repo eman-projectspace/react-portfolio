@@ -47,12 +47,12 @@ const projects = [
     image: '/j. - Copy.PNG',
   },
   {
-    title: 'Shoe Landing Page',
-    description: 'This is a fully responsive product landing page created using HTML and CSS. Clean layout, modern design, mobile-friendly..',
-    tech: ['HTML', 'CSS'],
-    codeLink: 'https://github.com/eman-projectspace/shoe-landing-page',
-    demoLink: 'https://shoe-landing-page-six.vercel.app/',
-    image: '/shoe-landing.jpeg',
+    title: 'Twitter Clone',
+    description: 'responsive Twitter clone built with Tailwind CSS, replicating the core UI and layout of the social media platform.',
+    tech: ['React', 'Tailwindcss'],
+    codeLink: 'https://github.com/eman-projectspace/twitter-clone-tailwind',
+    demoLink: 'twitter-clone-tailwind-rho.vercel.app',
+    image: '/Twitter-Clone.PNG',
   },
 ];
 
@@ -86,7 +86,7 @@ const Home = () => {
 
       {/*  */}
       <motion.div
-        className="flex gap-2 text-5xl font-bold mt-3 mb-2"
+        className="flex gap-2 text-3xl  font-bold mt-3 mb-2"
         variants={container}
         initial="hidden"
         animate="visible"
@@ -213,7 +213,7 @@ const Home = () => {
               <img
                 src={image}
                 alt={`${title} Screenshot`}
-                className="w-full h-48 object-cover rounded-t-xl"
+                className="w-full h-48 object-cover objext-top rounded-t-xl"
                 loading="lazy"
               />
 
