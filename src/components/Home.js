@@ -51,7 +51,7 @@ const projects = [
     description: 'responsive Twitter clone built with Tailwind CSS, replicating the core UI and layout of the social media platform.',
     tech: ['React', 'Tailwindcss'],
     codeLink: 'https://github.com/eman-projectspace/twitter-clone-tailwind',
-    demoLink: 'twitter-clone-tailwind-rho.vercel.app',
+    demoLink: 'https://twitter-clone-tailwind-rho.vercel.app/',
     image: '/Twitter-Clone.PNG',
   },
 ];
@@ -107,7 +107,7 @@ const Home = () => {
 
 
       <motion.p
-        className="mt-2 text-xl font-medium text-cyan-400 drop-shadow-md"
+        className="mt-2 text-xl font-medium bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.8 }}

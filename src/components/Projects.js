@@ -138,7 +138,7 @@ const projects = [
     description: 'responsive Twitter clone built with Tailwind CSS, replicating the core UI and layout of the social media platform.',
     tech: ['React', 'Tailwind CSS'],
     codeLink: 'https://github.com/eman-projectspace/twitter-clone-tailwind',
-    demoLink: 'twitter-clone-tailwind-rho.vercel.app',
+    demoLink: 'https://twitter-clone-tailwind-rho.vercel.app/',
     image: '/Twitter-Clone.PNG',
     category: 'Clone',
     featured: true,
