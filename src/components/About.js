@@ -214,7 +214,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <motion.a
-                href="/Eman Waheed Cv.pdf"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-6 py-3 rounded-full font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 shadow-lg"

@@ -113,7 +113,7 @@ const Home = () => {
         transition={{ delay: 0.6, duration: 0.8 }}
         whileHover={{ scale: 1.05 }}
       >
-        Full Stack Web Developer | React Specialist
+        Full Stack Web Developer
       </motion.p>
 
 
