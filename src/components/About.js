@@ -144,9 +144,9 @@ const About = () => {
           >
             <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-2xl">
               <img
-                src="/code-1076533_1280.jpg"
+                src="/pf-img2.jpg"
                 alt="Eman Waheed"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-top object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent" />
             </div>
