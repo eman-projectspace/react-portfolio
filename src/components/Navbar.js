@@ -59,13 +59,21 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
+              <Link
+                to="/"
+                className="text-xl md:text-xl font-extrabold tracking-widest relative group"
+              >
+                {/* Gradient on Eman */}
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-200 bg-clip-text text-transparent">
+                  Eman
+                </span>
+                <span className="text-white">CodeCrafts</span>
 
-
-              <Link to="/" className="text-xl font-bold tracking-wider">
-                <span className="text-blue-300">Code</span>
-                <span className="text-white"> with Eman</span>
+                {/* Underline hover effect */}
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-500 group-hover:w-full"></span>
               </Link>
             </motion.div>
+
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">

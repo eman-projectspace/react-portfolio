@@ -3,14 +3,25 @@ import { motion } from "framer-motion";
 
 export default function Cursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Detect screen size
   useEffect(() => {
-    const move = (e) => {
-      setPos({ x: e.clientX, y: e.clientY });
-    };
+    const checkScreen = () => setIsMobile(window.innerWidth < 768); // hide on screens < 768px
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  // Track mouse movement only if not mobile
+  useEffect(() => {
+    if (isMobile) return;
+    const move = (e) => setPos({ x: e.clientX, y: e.clientY });
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return null; // don’t render on mobile
 
   return (
     <motion.div
