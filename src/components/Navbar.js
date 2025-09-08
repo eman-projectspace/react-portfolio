@@ -27,7 +27,7 @@ const Navbar = () => {
   const navItems = [
     { path: '/', label: 'Home', icon: FiHome },
     { path: '/about', label: 'About', icon: FiUser },
-    { path: '/skills', label: 'Skills', icon: FiCode },
+    { path: '/blog', label: 'Blog', icon: FiCode },
     { path: '/projects', label: 'Projects', icon: FiFolder },
     { path: '/contact', label: 'Contact', icon: FiMail },
   ];

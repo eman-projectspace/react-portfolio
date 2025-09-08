@@ -12,6 +12,7 @@ import {
   FaGamepad,
   FaEdit
 } from 'react-icons/fa';
+import SmallDots from '../components/SmallDots';
 
 const projects = [
   {
@@ -204,11 +205,7 @@ const Projects = () => {
   return (
     <section className="bg-[#0a192f] text-white py-20 px-6 min-h-screen relative overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#1E90FF] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
-      </div>
+      <SmallDots />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}

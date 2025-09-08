@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
-import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contacts from './pages/Contacts';
 import Cursor from './components/Cursor';
+import Blog from './pages/Blog';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={< Contacts />} />
         </Routes>

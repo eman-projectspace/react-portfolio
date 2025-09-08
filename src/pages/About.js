@@ -6,6 +6,7 @@ import {
   FaMapMarkerAlt, FaEnvelope, FaDownload
 } from 'react-icons/fa';
 import { AnimatePresence } from 'framer-motion';
+import SmallDots from '../components/SmallDots';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('about');
@@ -84,28 +85,7 @@ const About = () => {
   return (
     <section className="min-h-screen bg-gradient-to-br from-[#0a192f] via-[#0f3460] to-[#16213e] text-white px-6 py-20">
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              opacity: 0,
-            }}
-            animate={{
-              y: -100,
-              opacity: [0, 0.5, 0],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 2,
-              delay: Math.random() * 2,
-              repeat: Infinity,
-            }}
-          />
-        ))}
-      </div>
+      <SmallDots />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}

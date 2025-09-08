@@ -5,6 +5,7 @@ import {
   FiGithub, FiLinkedin, FiInstagram
 } from "react-icons/fi";
 import axios from 'axios';
+import SmallDots from "../components/SmallDots";
 
 const Contacts = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -61,39 +62,7 @@ const Contacts = () => {
   return (
     <section className="min-h-screen bg-gradient-to-br from-[#0a192f] via-[#0f3460] to-[#16213e] text-white px-6 py-20 relative overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => {
-          const icons = ["{ }", "</>", "()", "React", "JS", "CSS", "HTML"];
-          const icon = icons[Math.floor(Math.random() * icons.length)];
-          const size = Math.random() * 20 + 12;
-          const left = Math.random() * 100;
-          const delay = Math.random() * 4;
-          const duration = 8 + Math.random() * 4;
-
-          return (
-            <motion.div
-              key={i}
-              className="absolute text-blue-400/20 font-mono font-bold"
-              style={{
-                fontSize: `${size}px`,
-                left: `${left}%`,
-                top: "120%",
-                zIndex: 0,
-              }}
-              initial={{ y: 0 }}
-              animate={{ y: "-130%" }}
-              transition={{
-                duration,
-                delay,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              {icon}
-            </motion.div>
-          );
-        })}
-      </div>
+      <SmallDots />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
