@@ -6,7 +6,7 @@ import { SiVite } from 'react-icons/si';
 import {
   FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaLaravel,
   FaGithub, FaFigma, FaCode,
-  FaRocket, FaTools, FaServer, FaPalette
+  FaTools, FaServer, FaPalette
 } from 'react-icons/fa';
 import {
   SiTailwindcss, SiBootstrap, SiExpress, SiMongodb,
@@ -244,25 +244,6 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Additional Info Section */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 p-8 rounded-2xl border border-blue-600">
-            <FaRocket className="text-4xl text-blue-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Always Learning & Growing
-            </h3>
-            <p className="text-blue-200 max-w-2xl mx-auto leading-relaxed">
-              I'm passionate about staying up-to-date with the latest technologies and best practices.
-              Currently exploring AI tools, TypeScript, and advanced React patterns to enhance my development capabilities.
-            </p>
-          </div>
-        </motion.div>
 
 
       </div>

@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  FaGraduationCap, FaLaptopCode, FaUserGraduate, FaBriefcase,
-  FaHeart, FaLightbulb
+  FaGraduationCap, FaLaptopCode, FaUserGraduate, FaBriefcase
 } from 'react-icons/fa';
 import { AnimatePresence } from 'framer-motion';
 
 function TabNavigation() {
 
-  const [activeTab, setActiveTab] = useState('about');
+  const [activeTab, setActiveTab] = useState('education');
 
   const education = [
     {
@@ -88,7 +87,7 @@ function TabNavigation() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        {['about', 'education', 'experience', 'skills'].map((tab) => (
+        {['education', 'experience', 'skills'].map((tab) => (
           <motion.button
             key={tab}
             onClick={() => setActiveTab(tab)}
@@ -106,50 +105,6 @@ function TabNavigation() {
 
       {/* Tab Content */}
       <AnimatePresence mode="wait">
-        {activeTab === 'about' && (
-          <motion.div
-            key="about"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="grid md:grid-cols-2 gap-8">
-              <motion.div
-                className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border border-blue-500/20"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-center space-x-3 mb-4">
-                  <FaLightbulb className="text-2xl text-blue-400" />
-                  <h3 className="text-xl font-semibold text-white">What I Do</h3>
-                </div>
-                <p className="text-blue-200 leading-relaxed">
-                  I specialize in building modern web applications using React, Node.js, and other cutting-edge technologies. My focus is on creating intuitive user experiences and scalable backend solutions.
-                </p>
-              </motion.div>
-
-              <motion.div
-                className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border border-blue-500/20"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-center space-x-3 mb-4">
-                  <FaHeart className="text-2xl text-blue-400" />
-                  <h3 className="text-xl font-semibold text-white">My Passion</h3>
-                </div>
-                <p className="text-blue-200 leading-relaxed">
-                  I'm passionate about clean code, beautiful UI design, and solving real-world problems through technology. I love learning new things and sharing knowledge with the developer community.
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
 
         {activeTab === 'education' && (
           <motion.div

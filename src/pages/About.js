@@ -91,7 +91,11 @@ const About = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Hello! I'm a passionate Full Stack Developer, specializing in creating responsive and user-friendly web applications. I love turning complex problems into simple, beautiful, and intuitive solutions.
+
+              Hello! I'm a passionate Full Stack Developer who loves turning complex problems into simple, beautiful, and intuitive solutions.
+              I build modern web applications using React, Node.js, and other cutting-edge technologies, with a strong focus on creating seamless user experiences and scalable backend solutions.
+
+
             </motion.p>
 
             <motion.p
@@ -175,6 +179,30 @@ const About = () => {
 
         {/* TabNav */}
         <TabNavigation />
+        {/* Extra */}
+        {/* Additional Info Section */}
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 p-8 rounded-2xl border border-blue-600">
+            <FaRocket className="text-4xl text-blue-400 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Always Learning & Growing
+            </h3>
+            <p className="text-blue-200 max-w-2xl mx-auto leading-relaxed">
+              I'm passionate about staying up-to-date with the latest technologies and best practices.
+              Currently exploring AI tools, TypeScript, and advanced React patterns to enhance my development capabilities.
+              I also believe in writing clean code, crafting beautiful UI designs, and solving real-world problems through technology.
+              Learning new things and sharing knowledge with the developer community excites me every day.
+
+            </p>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
