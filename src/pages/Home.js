@@ -251,12 +251,16 @@ const Home = () => {
         </div>
       </section>
 
-
-
       {/* 5th Final CTA  Get in touch*/}
-      <section className="w-full py-20 px-6 bg-gradient-to-r from-purple-900 via-indigo-900 to-blue-900 text-white">
+      <section
+        className="w-full py-20 px-6 text-white bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: "url('https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg')" }}
+      >
+        {/* Light blue overlay */}
+        <div className="absolute inset-0 bg-blue-600/30"></div>
+
         <motion.div
-          className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
+          className="relative max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -266,7 +270,7 @@ const Home = () => {
             <h2 className="text-4xl font-extrabold mb-4 tracking-wide">
               Let's Build Something Amazing Together
             </h2>
-            <p className="text-lg text-purple-300 max-w-xl leading-relaxed">
+            <p className="text-lg text-blue-100 max-w-xl leading-relaxed">
               Whether you’re looking for freelance support, guidance in web development, or a reliable collaborator,
               I’m here to turn your ideas into clean, performant, and impactful web applications.
             </p>
@@ -274,10 +278,11 @@ const Home = () => {
 
           <a
             href="/contact"
-            className="inline-block bg-white text-indigo-900 font-bold px-10 py-4 rounded-full shadow-lg hover:bg-gray-100 transition"
+            className="inline-block bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-white hover:to-blue-600 text-white font-bold px-10 py-4 rounded-full shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl"
           >
             Get In Touch
           </a>
+
         </motion.div>
       </section>
 
@@ -314,8 +319,8 @@ const Home = () => {
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
           {/* Left */}
           <div className="mb-4 md:mb-0">
-            <h2 className="text-lg font-semibold">© 2025 Eman Waheed</h2>
-            <p className="text-sm text-[#8892b0]">Built with ❤️ using React & Tailwind</p>
+            <h2 className="text-lg font-semibold"> 2025 Eman Waheed</h2>
+            <p className="text-sm text-[#8892b0]">Built with React & Tailwind</p>
           </div>
 
           {/* Right: Social Icons */}
