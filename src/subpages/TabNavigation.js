@@ -58,7 +58,7 @@ function TabNavigation() {
       title: 'Frontend Developer',
       company: 'Freelance Projects',
       location: 'Remote',
-      description: [    // <-- array ✅
+      description: [
         'Designed and developed responsive UIs using React and Tailwind CSS',
         'Built reusable components and integrated REST APIs',
         'Delivered clean, mobile-friendly layouts for small business clients',
@@ -177,9 +177,9 @@ function TabNavigation() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-                      <p className="text-blue-300 font-medium">{item.company}</p>
+                      <p className="text-blue-300 font-medium">{item.duration}</p>
                       <div className="flex items-center space-x-4 text-sm text-blue-400">
-                        <span>{item.location}</span>
+                        <span>{item.institution}</span>
                         <span>•</span>
                         <span>{item.year}</span>
                       </div>
@@ -188,7 +188,7 @@ function TabNavigation() {
                   <ul className="space-y-2">
                     {item.description.map((desc, descIndex) => (
                       <li key={descIndex} className="flex items-start space-x-2">
-                        <span className="text-blue-400 mt-1">•</span>
+                        <span>•</span>
                         <span className="text-blue-200 leading-relaxed">{desc}</span>
                       </li>
                     ))}

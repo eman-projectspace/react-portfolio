@@ -1,12 +1,122 @@
-import React from 'react'
-import Skills from '../pages/Skills'
-function Blog() {
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaLaravel, FaCode,
+  FaBookOpen, FaTerminal, FaRobot
+} from "react-icons/fa";
+import {
+  SiTailwindcss, SiBootstrap, SiExpress, SiMongodb, SiPhp, SiMysql,
+  SiJquery, SiOpenai, SiVercel, SiVite, SiGithub
+} from "react-icons/si";
+import SmallDots from "../components/SmallDots";
+
+const blogPosts = [
+  { id: 1, title: "HTML5", icon: FaHtml5, color: "#E34F26", date: "2025-09-01", category: "Frontend", content: "HTML5 is the structure of every web page — semantic tags, multimedia, forms, and modern APIs." },
+  { id: 2, title: "CSS3", icon: FaCss3Alt, color: "#1572B6", date: "2025-08-28", category: "Frontend", content: "CSS3 brings layout, animations, gradients and media queries for responsive, beautiful UIs." },
+  { id: 3, title: "Bootstrap", icon: SiBootstrap, color: "#7952B3", date: "2025-08-25", category: "Frontend", content: "Bootstrap speeds up UI development with a consistent grid, components and utilities." },
+  { id: 4, title: "JavaScript", icon: FaJs, color: "#F7DF1E", date: "2025-08-22", category: "Frontend", content: "JavaScript powers interactivity — from DOM manipulation to modern frameworks like React." },
+  { id: 5, title: "React", icon: FaReact, color: "#61DAFB", date: "2025-08-19", category: "Frontend", content: "React enables component-driven UIs — master hooks, composition and performance techniques." },
+  { id: 6, title: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4", date: "2025-08-16", category: "Frontend", content: "Tailwind is a utility-first CSS framework for rapid UI composition." },
+  { id: 19, title: "Vite", icon: SiVite, color: "#646CFF", date: "2025-07-01", category: "Tools & Platforms", content: "Vite is a fast build tool and dev server for modern frontends." },
+
+  { id: 7, title: "MongoDB", icon: SiMongodb, color: "#47A248", date: "2025-08-13", category: "Backend", content: "MongoDB is a flexible NoSQL database for JSON-like documents." },
+  { id: 8, title: "Node.js", icon: FaNodeJs, color: "#339933", date: "2025-08-10", category: "Backend", content: "Node.js runs JavaScript server-side to build fast APIs and services." },
+  { id: 9, title: "Express.js", icon: SiExpress, color: "#000000", date: "2025-08-07", category: "Backend", content: "Express is a minimal web framework for Node.js — routing and middleware." },
+  { id: 12, title: "MySQL", icon: SiMysql, color: "#4479A1", date: "2025-07-28", category: "Backend", content: "MySQL is a reliable relational database — learn schema design and queries." },
+  { id: 10, title: "PHP", icon: SiPhp, color: "#777BB4", date: "2025-08-04", category: "Backend", content: "PHP runs many backends — core syntax, forms, and DB integration." },
+  { id: 11, title: "Laravel", icon: FaLaravel, color: "#FF2D20", date: "2025-08-01", category: "Backend", content: "Laravel is a modern PHP framework with routing, Eloquent and Blade templating." },
+  { id: 22, title: "Amazon CLI", icon: FaTerminal, color: "#FF9900", date: "2025-06-20", category: "Backend", content: "Amazon CLI manages AWS resources from terminal — S3, EC2 and more." },
+
+  { id: 14, title: "AI Tools (OpenAI)", icon: SiOpenai, color: "#10A37F", date: "2025-07-20", category: "AI Tools", content: "OpenAI and related tools assist ideation, prototyping, and code generation when used responsibly." },
+  { id: 18, title: "ChatGPT / OpenAI", icon: SiOpenai, color: "#10A37F", date: "2025-07-04", category: "AI Tools", content: "ChatGPT helps with writing, debugging, and brainstorming — verify outputs." },
+  { id: 20, title: "Cursor AI", icon: FaRobot, color: "#10A37F", date: "2025-06-28", category: "AI Tools", content: "Cursor and similar in-editor AIs give coding suggestions and productivity boosts." },
+  { id: 21, title: "Trae AI", icon: FaRobot, color: "#9333EA", date: "2025-06-24", category: "AI Tools", content: "Trae AI and niche tools can be explored for automation and prototyping." },
+
+  { id: 15, title: "Git & GitHub", icon: SiGithub, color: "#181717", date: "2025-07-16", category: "Tools & Platforms", content: "Git & GitHub enable version control and collaboration — learn branching and PRs." },
+  { id: 16, title: "VS Code", icon: FaCode, color: "#007ACC", date: "2025-07-12", category: "Tools & Platforms", content: "VS Code is a powerful editor with extensions, terminal and debugger." },
+  { id: 17, title: "Vercel", icon: SiVercel, color: "#000000", date: "2025-07-08", category: "Tools & Platforms", content: "Vercel offers frictionless static & serverless deployments with previews." },
+  { id: 13, title: "jQuery", icon: SiJquery, color: "#0769AD", date: "2025-07-24", category: "Tools & Platforms", content: "jQuery simplifies DOM & AJAX for legacy projects — useful for older codebases." }
+];
+
+const categories = ["All", "Frontend", "Backend", "AI Tools", "Tools & Platforms"];
+
+const Blog = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  // filtered & sorted (newest first)
+  const filteredPosts = blogPosts
+    .filter(post => activeCategory === "All" ? true : post.category === activeCategory)
+    .slice() // copy
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
   return (
-    <div>
+    <section className="min-h-screen bg-gradient-to-br from-[#0a192f] via-[#0f3460] to-[#16213e] text-white px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Animated Header (same pattern as About) */}
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className="inline-block mb-4"
+            whileHover={{ scale: 1.07, rotate: 3 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <FaBookOpen className="text-6xl text-blue-400 mx-auto" />
+          </motion.div>
+          <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+            My Blog
+          </h2>
+          <p className="text-lg text-blue-200 max-w-3xl mx-auto leading-relaxed">
+            Sharing in-depth posts about tools, frameworks and workflows — one topic at a time.
+          </p>
+        </motion.div>
 
-      <Skills />
-    </div>
-  )
-}
+        <SmallDots />
+        {/* Category Filters */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          {categories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2 rounded-full font-medium transition-all ${activeCategory === cat
+                ? "bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow-lg"
+                : "bg-blue-900/40 text-blue-200 hover:bg-blue-800/50 border border-blue-600/30"
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-export default Blog
+        {/* Grid of posts */}
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {filteredPosts.map(post => {
+            const Icon = post.icon;
+            return (
+              <article key={post.id} className="bg-[#112240] p-6 rounded-2xl shadow-lg border border-blue-600 hover:shadow-2xl transition-all">
+                <div className="flex items-center gap-4 mb-3">
+                  {Icon && <Icon className="text-4xl" style={{ color: post.color }} />}
+                  <div>
+                    <h3 className="text-xl font-semibold">{post.title}</h3>
+                    <div className="text-sm text-blue-400">{new Date(post.date).toLocaleDateString()}</div>
+                  </div>
+                </div>
+                <p className="text-blue-100 leading-relaxed mb-4">{post.content}</p>
+                <div className="flex justify-between items-center">
+                  {/* <span className="text-sm text-blue-300 px-3 py-1 bg-blue-900/30 rounded-full">{post.category}</span> */}
+                  {/* <button className="text-sm text-blue-400 hover:text-cyan-300 font-medium">Read More →</button> */}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Blog;

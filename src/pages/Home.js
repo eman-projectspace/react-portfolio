@@ -267,7 +267,8 @@ const Home = () => {
               Let's Build Something Amazing Together
             </h2>
             <p className="text-lg text-purple-300 max-w-xl leading-relaxed">
-              Whether you need freelance help, internships, or collaborations — I’m here to bring your vision alive with clean, performant web apps.
+              Whether you’re looking for freelance support, guidance in web development, or a reliable collaborator,
+              I’m here to turn your ideas into clean, performant, and impactful web applications.
             </p>
           </div>
 

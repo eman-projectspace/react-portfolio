@@ -14,6 +14,8 @@ import {
   SiOpenai,
 } from 'react-icons/si';
 
+
+
 const Skills = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
