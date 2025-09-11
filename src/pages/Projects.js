@@ -145,8 +145,21 @@ const projects = [
     featured: true,
     difficulty: 'Intermediate',
     status: 'Live'
+  },
+  {
+    id: 11,
+    title: 'Spotify Clone',
+    description: 'responsive Spotify clone built with Html CSS & JavaScript replicating the core UI,layout and basic functioning of the spotify.',
+    tech: ['React', 'Tailwind CSS'],
+    codeLink: 'https://github.com/eman-projectspace/spotify-clone',
+    demoLink: 'https://spotify-clone-tan-nine.vercel.app/',
+    image: '/Spotify.jpeg',
+    category: 'Clone',
+    featured: true,
+    difficulty: 'Advanced',
+    status: 'Live'
   }
-  // 
+
 
 ];
 
