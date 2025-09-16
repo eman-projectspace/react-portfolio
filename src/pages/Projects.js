@@ -148,16 +148,12 @@ const projects = [
   },
   {
     id: 11,
-    title: 'Spotify Clone',
-    description: 'responsive Spotify clone built with Html CSS & JavaScript replicating the core UI,layout and basic functioning of the spotify.',
-    tech: ['React', 'Tailwind CSS'],
+    title: 'Twitter Clone',
+    description: 'responsive Twitter clone built with Tailwind CSS, replicating the core UI and layout of the social media platform.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
     codeLink: 'https://github.com/eman-projectspace/spotify-clone',
     demoLink: 'https://spotify-clone-tan-nine.vercel.app/',
     image: '/Spotify.jpeg',
-    category: 'Clone',
-    featured: true,
-    difficulty: 'Advanced',
-    status: 'Live'
   }
 
 
@@ -216,7 +212,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden px-6 py-20">
+    <section className="min-h-screen text-white flex flex-col items-center justify-center text-center overflow-x-hidden px-6 py-20">
 
       {/* Animated Background */}
       <SmallDots />

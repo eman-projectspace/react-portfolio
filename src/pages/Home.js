@@ -34,8 +34,8 @@ const projects = [
     title: 'Spotify Clone',
     description: 'A responsive Spotify music player clone built using HTML, CSS, and JavaScript. Features include a working play/pause, next/previous buttons, and volume control. Developed for learning web development and UI/UX design.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    codeLink: 'https://github.com/eman-projectspace/Spotify',
-    demoLink: 'https://spotify-clone-eman.vercel.app/',
+    codeLink: 'https://github.com/eman-projectspace/spotify-clone',
+    demoLink: 'https://spotify-clone-tan-nine.vercel.app/',
     image: '/Spotify.jpeg',
   },
 
@@ -63,7 +63,7 @@ const Home = () => {
 
 
   return (
-    <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden px-6 py-20">
+    <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden px-6 py-0">
 
 
       {/* Profile Image */}

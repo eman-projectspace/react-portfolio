@@ -34,7 +34,7 @@ const Contacts = () => {
   ];
 
   return (
-    <section className="min-h-screen text-white flex flex-col items-center justify-center px-4 text-center overflow-x-hidden">
+    <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden px-6 py-20">
 
       {/* Animated Background */}
       <SmallDots />
