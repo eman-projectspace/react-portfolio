@@ -69,82 +69,140 @@ const blogPosts = [
 
 const categories = ["All", "Frontend", "Backend", "AI Tools", "Tools & Platforms"];
 
+
 const Blog = () => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
   // filtered & sorted (newest first)
   const filteredPosts = blogPosts
-    .filter(post => activeCategory === "All" ? true : post.category === activeCategory)
+    .filter(post =>
+      activeCategory === "All" ? true : post.category === activeCategory
+    )
+    .filter(post =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.content.toLowerCase().includes(searchTerm.toLowerCase())
+    )
     .slice()
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
+
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#0a192f] via-[#0f3460] to-[#16213e] text-white px-6 py-20">
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Animated Header (same pattern as About) */}
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+    <section className="min-h-screen text-white px-6 py-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-10 relative">
+        {/* LEFT: Blog posts */}
+        <div>
+          <SmallDots />
+          {/* Header */}
           <motion.div
-            className="inline-block mb-4"
-            whileHover={{ scale: 1.07, rotate: 3 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            <FaBookOpen className="text-6xl text-blue-400 mx-auto" />
+            <FaBookOpen className="text-6xl text-blue-400 mx-auto mb-4" />
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+              My Blog
+            </h2>
+            <p className="text-lg text-blue-200 max-w-3xl mx-auto leading-relaxed">
+              Sharing in-depth posts about tools, frameworks and workflows — one topic at a time.
+            </p>
           </motion.div>
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">
-            My Blog
-          </h2>
-          <p className="text-lg text-blue-200 max-w-3xl mx-auto leading-relaxed">
-            Sharing in-depth posts about tools, frameworks and workflows — one topic at a time.
-          </p>
-        </motion.div>
 
-        <SmallDots />
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full font-medium transition-all ${activeCategory === cat
-                ? "bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow-lg"
-                : "bg-blue-900/40 text-blue-200 hover:bg-blue-800/50 border border-blue-600/30"
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+          {/* Category Filters */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 rounded-full font-medium transition-all ${activeCategory === cat
+                  ? "bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow-lg"
+                  : "bg-blue-900/40 text-blue-200 hover:bg-blue-800/50 border border-blue-600/30"
+                  }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          {/* Search Box (TOP on small screens) */}
+          <div className="bg-[#112240] border border-blue-600 rounded-2xl p-6 shadow-lg mb-6 lg:hidden">
+            <h3 className="text-xl font-semibold mb-4">🔍 Search</h3>
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              placeholder="Search posts..."
+              className="w-full px-4 py-2 rounded-lg bg-blue-900/40 border border-blue-600/30 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
 
-        {/* Grid of posts */}
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {filteredPosts.map(post => {
-            const Icon = post.icon;
-            return (
-              <article key={post.id} className="bg-[#112240] p-6 rounded-2xl shadow-lg border border-blue-600 hover:shadow-2xl transition-all">
-                <div className="flex items-center gap-4 mb-3">
-                  {Icon && <Icon className="text-4xl" style={{ color: post.color }} />}
-                  <div>
-                    <h3 className="text-xl font-semibold">{post.title}</h3>
-                    <div className="text-sm text-blue-400">{new Date(post.date).toLocaleDateString()}</div>
+          {/* Posts Grid */}
+          <div className="grid gap-10 md:grid-cols-2">
+            {filteredPosts.map(post => {
+              const Icon = post.icon;
+              return (
+                <article
+                  key={post.id}
+                  className="bg-[#112240] p-6 rounded-2xl shadow-lg border border-blue-600 hover:shadow-2xl transition-all"
+                >
+                  <div className="flex items-center gap-4 mb-3">
+                    {Icon && <Icon className="text-4xl" style={{ color: post.color }} />}
+                    <div>
+                      <h3 className="text-xl font-semibold">{post.title}</h3>
+                      <div className="text-sm text-blue-400">
+                        {new Date(post.date).toLocaleDateString()}
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <p className="text-blue-100 leading-relaxed mb-4">{post.content}</p>
-                <div className="flex justify-between items-center">
-                  {/* <span className="text-sm text-blue-300 px-3 py-1 bg-blue-900/30 rounded-full">{post.category}</span> */}
-                  {/* <button className="text-sm text-blue-400 hover:text-cyan-300 font-medium">Read More →</button> */}
-                </div>
-              </article>
-            );
-          })}
+                  <p className="text-blue-100 leading-relaxed">{post.content}</p>
+                </article>
+              );
+            })}
+          </div>
         </div>
+
+        {/* RIGHT: Sidebar */}
+        {/* RIGHT: Sidebar */}
+        <aside className="lg:sticky lg:top-24 h-fit flex flex-col gap-6">
+
+          {/* Search Box */}
+          {/* Search Box (SIDEBAR on large screens) */}
+          <div className="bg-[#112240] border border-blue-600 rounded-2xl p-6 shadow-lg hidden lg:block">
+            <h3 className="text-xl font-semibold mb-4">🔍 Search</h3>
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              placeholder="Search posts..."
+              className="w-full px-4 py-2 rounded-lg bg-blue-900/40 border border-blue-600/30 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+
+          {/* Scrollable Box */}
+          <div className="bg-[#112240] border border-blue-600 rounded-2xl p-6 shadow-lg max-h-64 overflow-y-auto">
+            <h3 className="text-xl font-semibold mb-4">📌 Recent Posts</h3>
+            <ul className="space-y-3 text-blue-200 text-sm">
+              {blogPosts
+                .slice()
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .slice(0, 8) // only show 8 items
+                .map(post => (
+                  <li key={post.id} className="hover:text-cyan-400 transition-colors cursor-pointer">
+                    {post.title}
+                  </li>
+                ))}
+            </ul>
+          </div>
+
+        </aside>
+
+
+
       </div>
     </section>
+
   );
 };
 

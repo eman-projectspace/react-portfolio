@@ -30,15 +30,15 @@ const projects = [
     codeLink: 'https://github.com/eman-projectspace/Baroque-mern',
     demoLink: 'https://baroque-mern.vercel.app/',
     image: '/baroque.PNG',
+  }, {
+    title: 'Spotify Clone',
+    description: 'A responsive Spotify music player clone built using HTML, CSS, and JavaScript. Features include a working play/pause, next/previous buttons, and volume control. Developed for learning web development and UI/UX design.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    codeLink: 'https://github.com/eman-projectspace/Spotify',
+    demoLink: 'https://spotify-clone-eman.vercel.app/',
+    image: '/Spotify.jpeg',
   },
-  {
-    title: 'Ultra Edit Clone',
-    description: 'A responsive clone of the UltraEdit download page using HTML and CSS. Built for learning and UI design practice.',
-    tech: ['HTML', 'CSS'],
-    codeLink: 'https://github.com/eman-projectspace/ultraEdit-clone',
-    demoLink: 'https://ultra-edit-clone-sage.vercel.app/',
-    image: '/ultra-edit.jpeg',
-  },
+
   {
     title: 'J .',
     description: 'Full-stack e-commerce dress website built using Html, Css, Bootstrap.',
@@ -63,7 +63,8 @@ const Home = () => {
 
 
   return (
-    <section className="min-h-screen bg-[#0a192f] text-white flex flex-col items-center justify-center px-4 text-center overflow-x-hidden">
+    <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden px-6 py-20">
+
 
       {/* Profile Image */}
       <motion.div
@@ -159,7 +160,7 @@ const Home = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold text-white mb-12">🛠️ Skills</h2> {/* ⬅️ was mb-8 */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-blue-300 text-lg"> {/* ⬅️ was gap-6 */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 text-blue-300 text-lg"> {/*  was gap-6 */}
             <span>React+Vite</span>
             <span>Tailwind CSS</span>
             <span>JavaScript</span>
@@ -174,10 +175,10 @@ const Home = () => {
 
 
       {/* 3rd Projects */}
-      <section className="max-w-6xl mx-auto py-20 px-6 text-white">
+      <section className="max-w-6xl mx-auto py-20 px-7 text-white">
         <h2 className="text-3xl font-bold mb-12 text-center tracking-wide">🚀 My Projects</h2>
 
-        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10   sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {projects.map(({ title, description, tech, codeLink, demoLink, image }, index) => (
             <motion.div
               key={index}

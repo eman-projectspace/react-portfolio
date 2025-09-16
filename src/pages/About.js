@@ -20,7 +20,8 @@ const About = () => {
 
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#0a192f] via-[#0f3460] to-[#16213e] text-white px-6 py-20">
+    <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden px-6 py-20">
+
       {/* Animated Background */}
       <SmallDots />
 

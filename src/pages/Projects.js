@@ -216,7 +216,8 @@ const Projects = () => {
   };
 
   return (
-    <section className="bg-[#0a192f] text-white py-20 px-6 min-h-screen relative overflow-hidden">
+    <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden px-6 py-20">
+
       {/* Animated Background */}
       <SmallDots />
 

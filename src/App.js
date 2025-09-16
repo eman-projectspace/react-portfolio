@@ -7,11 +7,13 @@ import Projects from './pages/Projects';
 import Contacts from './pages/Contacts';
 import Cursor from './components/Cursor';
 import Blog from './pages/Blog';
+import Background from './components/Background';
 
 
 function App() {
   return (
     <Router>
+      <Background />
       <Navbar />
       <Cursor />
       <div >
