@@ -21,7 +21,7 @@ const About = () => {
 
   return (
     <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden px-6 py-20">
-
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       {/* Animated Background */}
       <SmallDots />
 
@@ -62,7 +62,7 @@ const About = () => {
           >
             <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-2xl">
               <img
-                src="/pf-img2.jpg"
+                src="/profile-picc1.jpg"
                 alt="Eman Waheed"
                 className="w-full h-full object-top object-cover"
               />
