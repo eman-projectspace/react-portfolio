@@ -154,6 +154,15 @@ const projects = [
     codeLink: 'https://github.com/eman-projectspace/spotify-clone',
     demoLink: 'https://spotify-clone-tan-nine.vercel.app/',
     image: '/Spotify.jpeg',
+  },
+  {
+    id: 12,
+    title: 'Swifturl',
+    description: 'Modern and responsive URL shortener built with Next.js and Tailwind CSS, allowing users to generate, manage, and share shortened links easily with a clean UI.',
+    tech: ['Next.js', 'Tailwind Css', 'JavaScript'],
+    codeLink: 'https://github.com/eman-projectspace/swifturl',
+    demoLink: 'https://swifturl-beryl.vercel.app/',
+    image: '/Swifturl.PNG',
   }
 
 

@@ -40,12 +40,12 @@ const projects = [
   },
 
   {
-    title: 'J .',
-    description: 'Full-stack e-commerce dress website built using Html, Css, Bootstrap.',
-    tech: ['Html', 'Css', 'Bootstrap'],
-    codeLink: 'https://github.com/eman-projectspace/Laravel-Website',
-    demoLink: 'https://j-website-eman-projectspaces-projects.vercel.app/',
-    image: '/j. - Copy.PNG',
+    title: 'Swifturl',
+    description: 'Modern and responsive URL shortener built with Next.js and Tailwind CSS, allowing users to generate, manage, and share shortened links easily with a clean UI.',
+    tech: ['Next.js', 'Tailwind Css', 'JavaScript'],
+    codeLink: 'https://github.com/eman-projectspace/swifturl',
+    demoLink: 'https://swifturl-beryl.vercel.app/',
+    image: '/Swifturl.PNG',
   },
   {
     title: 'Twitter Clone',
