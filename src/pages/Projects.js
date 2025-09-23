@@ -148,12 +148,16 @@ const projects = [
   },
   {
     id: 11,
-    title: 'Twitter Clone',
-    description: 'responsive Twitter clone built with Tailwind CSS, replicating the core UI and layout of the social media platform.',
+    title: 'Spotify Clone',
+    description: 'responsive Spotify clone built with Html, CSS and javascript replicating the core UI and layout of the social media platform and some basic functionality.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     codeLink: 'https://github.com/eman-projectspace/spotify-clone',
     demoLink: 'https://spotify-clone-tan-nine.vercel.app/',
     image: '/Spotify.jpeg',
+    category: 'Clone',
+    featured: true,
+    difficulty: 'Intermediate',
+    status: 'Live'
   },
   {
     id: 12,
@@ -163,6 +167,22 @@ const projects = [
     codeLink: 'https://github.com/eman-projectspace/swifturl',
     demoLink: 'https://swifturl-beryl.vercel.app/',
     image: '/Swifturl.PNG',
+    category: 'Clone',
+    featured: false,
+    difficulty: 'Intermediate',
+    status: 'Live'
+  }, {
+    id: 13,
+    title: 'LinkSite ',
+    description: 'simple and responsive Linktree clone built with Tailwind CSS, allowing users to share multiple links on a single page.',
+    tech: ['javaScript', 'Next.Js'],
+    codeLink: 'https://github.com/eman-projectspace/linksite',
+    demoLink: '/linktree.mp4',
+    image: '/Linksite.PNG',
+    category: 'Clone',
+    featured: true,
+    difficulty: 'Intermediate',
+    status: 'Development'
   }
 
 

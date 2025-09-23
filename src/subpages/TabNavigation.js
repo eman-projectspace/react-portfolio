@@ -113,13 +113,15 @@ function TabNavigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto px-4 sm:px-6"
           >
             <div className="space-y-6">
               {education.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start space-x-6 p-6 rounded-2xl bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300"
+                  className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 p-6 rounded-2xl 
+                     bg-gradient-to-br from-blue-900/50 to-cyan-900/50 border border-blue-500/20 
+                     hover:border-blue-400/40 transition-all duration-300"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
@@ -130,9 +132,9 @@ function TabNavigation() {
                     <item.icon className="text-xl text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
                       <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-                      <span className="text-sm text-blue-400 font-medium">{item.year}</span>
+                      <span className="text-sm text-blue-400 font-medium mt-1 sm:mt-0">{item.year}</span>
                     </div>
                     <p className="text-blue-300 font-medium mb-1">{item.institution}</p>
                     {item.duration && (
@@ -150,6 +152,7 @@ function TabNavigation() {
             </div>
           </motion.div>
         )}
+
 
         {activeTab === 'experience' && (
           <motion.div

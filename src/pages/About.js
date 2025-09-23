@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion';
 import {
   FaLaptopCode, FaUserGraduate,
-  FaRocket, FaUsers, FaCode,
+  FaRocket, FaCode,
   FaMapMarkerAlt, FaEnvelope, FaDownload
 } from 'react-icons/fa';
 import SmallDots from '../components/SmallDots';
 import TabNavigation from '../subpages/TabNavigation';
-
+//FaUsers
 const About = () => {
 
 
   const stats = [
-    { icon: FaCode, number: '10+', label: 'Projects Completed', color: 'from-blue-500 to-cyan-400' },
-    { icon: FaUsers, number: '5+', label: 'Happy Clients', color: 'from-green-500 to-emerald-400' },
+    { icon: FaCode, number: '13+', label: 'Projects Completed', color: 'from-blue-500 to-cyan-400' },
+    // { icon: FaUsers, number: '5+', label: 'Happy Clients', color: 'from-green-500 to-emerald-400' },
     { icon: FaLaptopCode, number: '1000+', label: 'Hours of Coding', color: 'from-purple-500 to-pink-400' },
     { icon: FaRocket, number: '1+', label: 'Years Experience', color: 'from-orange-500 to-red-400' },
   ];
