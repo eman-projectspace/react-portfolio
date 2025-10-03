@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import {
   FaLaptopCode, FaUserGraduate,
   FaRocket, FaCode,
-  FaMapMarkerAlt, FaEnvelope, FaDownload
+  FaMapMarkerAlt, FaEnvelope
 } from 'react-icons/fa';
 import SmallDots from '../components/SmallDots';
 import TabNavigation from '../subpages/TabNavigation';
@@ -135,7 +135,7 @@ const About = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <motion.a
+              {/* <motion.a
                 href="/Eman-Waheed.Cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -145,8 +145,9 @@ const About = () => {
               >
                 <FaDownload />
                 <span>Download CV</span>
-              </motion.a>
+              </motion.a> */}
             </motion.div>
+
           </div>
         </motion.div>
 
