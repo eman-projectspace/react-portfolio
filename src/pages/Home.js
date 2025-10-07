@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
 import SmallDots from '../components/SmallDots';
+import Reviews from '../components/Reviews';
 
 // import Reviews from './Reviews';
 const letters = ['C', 'O', 'D', 'E', '', '', 'C', 'R', 'A', 'F', 'T', 'S'];
@@ -305,7 +306,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* <Reviews /> */}
+      <Reviews />
 
 
       {/* Footer */}

@@ -8,6 +8,7 @@ import Contacts from './pages/Contacts';
 import Cursor from './components/Cursor';
 import Blog from './pages/Blog';
 import Background from './components/Background';
+import Reviews from './components/Reviews';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={< Contacts />} />
+          <Route path="/reviews" element={< Reviews />} />
         </Routes>
       </div>
     </Router>

@@ -11,7 +11,7 @@ const About = () => {
 
 
   const stats = [
-    { icon: FaCode, number: '13+', label: 'Projects Completed', color: 'from-blue-500 to-cyan-400' },
+    { icon: FaCode, number: '14+', label: 'Projects Completed', color: 'from-blue-500 to-cyan-400' },
     // { icon: FaUsers, number: '5+', label: 'Happy Clients', color: 'from-green-500 to-emerald-400' },
     { icon: FaLaptopCode, number: '1000+', label: 'Hours of Coding', color: 'from-purple-500 to-pink-400' },
     { icon: FaRocket, number: '1+', label: 'Years Experience', color: 'from-orange-500 to-red-400' },
@@ -108,7 +108,6 @@ const About = () => {
             >
               When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community. I believe in continuous learning and staying up-to-date with the latest industry trends.
             </motion.p>
-
             {/* Contact Info */}
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 gap-4"
