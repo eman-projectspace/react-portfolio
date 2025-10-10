@@ -47,8 +47,8 @@ const projects = [
     description: 'A stylish and fully responsive Baroque fashion website built using pure HTML, CSS, and JavaScript to showcase elegant dress collections.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     codeLink: 'https://github.com/eman-projectspace/BAROQUE',
-    demoLink: 'twitter-clone-tailwind-rho.vercel.app',
-    image: '/baroque.PNG',
+    demoLink: 'https://baroque-topaz.vercel.app/',
+    image: '/baroque-bannerr.PNG',
     category: 'E-commerce',
     featured: true,
     difficulty: 'Intermediate',
@@ -69,59 +69,6 @@ const projects = [
   },
   {
     id: 5,
-    title: 'YouTube Clone',
-    description: 'Static clone of the YouTube homepage using only HTML & CSS.',
-    tech: ['HTML', 'CSS'],
-    codeLink: 'https://github.com/eman-projectspace/youtube-clone',
-    demoLink: 'https://youtube-clone-blue-iota.vercel.app/',
-    image: '/youtube clone.PNG',
-    category: 'Clone',
-    featured: false,
-    difficulty: 'Beginner',
-    status: 'Live'
-  },
-  {
-    id: 6,
-    title: 'Rock Paper Scissors',
-    description: 'A fun interactive game using JavaScript.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    codeLink: 'https://github.com/eman-projectspace/Rock-papper-scissor',
-    demoLink: 'https://rock-papper-scissor-git-main-eman-projectspaces-projects.vercel.app/',
-    image: '/rock-paper-scissor.PNG',
-    category: 'Game',
-    featured: false,
-    difficulty: 'Beginner',
-    status: 'Live'
-  },
-
-  {
-    id: 7,
-    title: 'Shoe Landing Page',
-    description: 'This is a fully responsive product landing page created using HTML and CSS. Clean layout, modern design, mobile-friendly.',
-    tech: ['HTML', 'CSS'],
-    codeLink: 'https://github.com/eman-projectspace/shoe-landing-page',
-    demoLink: 'https://shoe-landing-page-six.vercel.app/',
-    image: '/shoe-landing.jpeg',
-    category: 'Landing Page',
-    featured: false,
-    difficulty: 'Beginner',
-    status: 'Live'
-  },
-  {
-    id: 8,
-    title: 'Ultra Edit Clone',
-    description: 'A responsive clone of the UltraEdit download page using HTML and CSS. Built for learning and UI design practice.',
-    tech: ['HTML', 'CSS'],
-    codeLink: 'https://github.com/eman-projectspace/ultraEdit-clone',
-    demoLink: 'https://ultra-edit-clone-sage.vercel.app/',
-    image: '/ultra-edit.jpeg',
-    category: 'Clone',
-    featured: false,
-    difficulty: 'Beginner',
-    status: 'Live'
-  },
-  {
-    id: 9,
     title: 'Shop from Home',
     description: 'React-based e-commerce website where users can browse, filter, and purchase products online.',
     tech: ['React', 'Tailwind CSS', 'JavaScript'],
@@ -134,7 +81,7 @@ const projects = [
     status: 'Live'
   },
   {
-    id: 10,
+    id: 6,
     title: 'Twitter Clone',
     description: 'responsive Twitter clone built with Tailwind CSS, replicating the core UI and layout of the social media platform.',
     tech: ['React', 'Tailwind CSS'],
@@ -147,7 +94,7 @@ const projects = [
     status: 'Live'
   },
   {
-    id: 11,
+    id: 7,
     title: 'Spotify Clone',
     description: 'responsive Spotify clone built with Html, CSS and javascript replicating the core UI and layout of the social media platform and some basic functionality.',
     tech: ['HTML', 'CSS', 'JavaScript'],
@@ -160,19 +107,7 @@ const projects = [
     status: 'Live'
   },
   {
-    id: 12,
-    title: 'Swifturl',
-    description: 'Modern and responsive URL shortener built with Next.js and Tailwind CSS, allowing users to generate, manage, and share shortened links easily with a clean UI.',
-    tech: ['Next.js', 'Tailwind Css', 'JavaScript'],
-    codeLink: 'https://github.com/eman-projectspace/swifturl',
-    demoLink: 'https://swifturl-beryl.vercel.app/',
-    image: '/Swifturl.PNG',
-    category: 'Clone',
-    featured: false,
-    difficulty: 'Intermediate',
-    status: 'Live'
-  }, {
-    id: 13,
+    id: 8,
     title: 'LinkSite ',
     description: 'simple and responsive Linktree clone built with Tailwind CSS, allowing users to share multiple links on a single page.',
     tech: ['javaScript', 'Next.Js'],
@@ -184,7 +119,7 @@ const projects = [
     difficulty: 'Intermediate',
     status: 'Development'
   }, {
-    id: 14,
+    id: 9,
     title: '6Dot',
     description: 'Responsive e-commerce website for 6Dot footwear built with React and Tailwind CSS.',
     tech: ['JavaScript', 'React.js', 'Tailwind CSS', 'Framer Motion'],
