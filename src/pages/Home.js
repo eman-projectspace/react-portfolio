@@ -41,12 +41,14 @@ const projects = [
   },
 
   {
-    title: 'Swifturl',
-    description: 'Modern and responsive URL shortener built with Next.js and Tailwind CSS, allowing users to generate, manage, and share shortened links easily with a clean UI.',
-    tech: ['Next.js', 'Tailwind Css', 'JavaScript'],
-    codeLink: 'https://github.com/eman-projectspace/swifturl',
-    demoLink: 'https://swifturl-beryl.vercel.app/',
-    image: '/Swifturl.PNG',
+
+    title: 'Professional Video Blogger Website',
+    description: 'A professional and responsive WordPress website designed for video bloggers. Built using WordPress themes and plugins to create an engaging, easy-to-navigate, and content-focused layout.',
+    tech: ['WordPress', 'Elementor', 'PHP', 'CSS', 'JavaScript'],
+    codeLink: '', // optional for WordPress projects
+    demoLink: '', // add live URL if available
+    image: '/wp-img.PNG', // replace with your actual image file
+
   },
   {
     title: 'Twitter Clone',

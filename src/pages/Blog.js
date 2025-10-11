@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaLaravel, FaCode,
-  FaBookOpen, FaTerminal, FaRobot, FaTools, FaServer
+  FaBookOpen, FaTerminal, FaRobot, FaTools, FaServer, FaWordpress
 } from "react-icons/fa";
 import {
   SiTailwindcss, SiBootstrap, SiExpress, SiMongodb, SiPhp, SiMysql,
@@ -64,6 +64,16 @@ const blogPosts = [
   { id: 23, title: "Trae AI", icon: FaRobot, color: "#9333EA", date: "2025-08-17", category: "AI Tools", content: "Trae AI is an IDE that helps in coding we can also make customizable Ai agent with the help of it.We can use Cloud 3.7 sonnet in trae ai." },
 
   { id: 24, title: "Amazon CLI", icon: FaTerminal, color: "#FF9900", date: "2025-08-27", category: "AI Tools", content: "Amazon CLI manages AWS resources from terminal — We can make simple webites from its terminal.One thing to keep in mind these ai tools can support and speed things up,but you cant rely on it entirely -you still need to understand and build things yourself." },
+  {
+    id: 25,
+    title: "Exploring WordPress for Web Design",
+    icon: FaWordpress,
+    color: "#21759B",
+    date: "2025-10-08",
+    category: "Web Development",
+    content:
+      "Last week, I explored WordPress and experimented with different design tools, themes, and plugins. Through this learning process, I created a Professional Video Blogger website — focusing on clean design, responsiveness, and user-friendly functionality. WordPress made it easy to bring ideas to life without heavy coding, helping me understand how flexible and powerful it can be for both developers and creators."
+  }
 
 ];
 

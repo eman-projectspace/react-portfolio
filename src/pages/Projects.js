@@ -130,13 +130,26 @@ const projects = [
     featured: true,
     difficulty: 'Advanced',
     status: 'Live'
+  }, {
+    id: 10,
+    title: 'Professional Video Blogger Website',
+    description: 'A professional and responsive WordPress website designed for video bloggers. Built using WordPress themes and plugins to create an engaging, easy-to-navigate, and content-focused layout.',
+    tech: ['WordPress', 'Elementor', 'PHP', 'CSS', 'JavaScript'],
+    codeLink: '', // optional for WordPress projects
+    demoLink: '', // add live URL if available
+    image: '/wp-img.PNG', // replace with your actual image file
+    category: 'WordPress',
+    featured: true,
+    difficulty: 'Intermediate',
+    status: 'Live'
   }
+
 
 
 
 ];
 
-const categories = ['All', 'E-commerce', 'Landing Page', 'Clone', 'Full-Stack', 'Game'];
+const categories = ['All', 'E-commerce', 'Landing Page', 'Clone', 'Full-Stack', 'Game', 'WordPress'];
 const difficulties = ['All', 'Beginner', 'Intermediate', 'Advanced'];
 
 const Projects = () => {

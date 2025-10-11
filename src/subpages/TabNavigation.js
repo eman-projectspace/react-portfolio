@@ -76,7 +76,8 @@ function TabNavigation() {
     { name: 'HTML5 & CSS3', level: 90, color: '#E34F26' },
     { name: 'Tailwind CSS', level: 85, color: '#06B6D4' },
     { name: 'Node.js', level: 70, color: '#339933' },
-    { name: 'PHP', level: 75, color: '#777BB4' }
+    { name: 'PHP', level: 75, color: '#777BB4' },
+    { name: 'WordPress', level: 80, color: '#21759B' }
   ];
   return (
     <div>   {/* Tab Navigation */}
