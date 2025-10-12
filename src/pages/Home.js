@@ -5,22 +5,22 @@ import { Typewriter } from 'react-simple-typewriter';
 import SmallDots from '../components/SmallDots';
 import Reviews from '../components/Reviews';
 
-// import Reviews from './Reviews';
-const letters = ['C', 'O', 'D', 'E', '', '', 'C', 'R', 'A', 'F', 'T', 'S'];
+// // import Reviews from './Reviews';
+// const letters = ['C', 'O', 'D', 'E', '', '', 'C', 'R', 'A', 'F', 'T', 'S'];
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3
-    }
-  }
-};
+// const container = {
+//   hidden: {},
+//   visible: {
+//     transition: {
+//       staggerChildren: 0.3
+//     }
+//   }
+// };
 
-const item = {
-  hidden: { opacity: 0, x: -50, y: 50, rotate: -45 },
-  visible: { opacity: 1, x: 0, y: 0, rotate: 0, transition: { type: 'spring', stiffness: 100 } }
-};
+// const item = {
+//   hidden: { opacity: 0, x: -50, y: 50, rotate: -45 },
+//   visible: { opacity: 1, x: 0, y: 0, rotate: 0, transition: { type: 'spring', stiffness: 100 } }
+// };
 
 // 
 const projects = [
@@ -66,84 +66,96 @@ const Home = () => {
 
 
   return (
-    <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden px-6 py-0">
+    <section className="min-h-screen text-white flex flex-col items-center justify-center  text-center overflow-x-hidden  py-0">
 
-      {/* Profile Image */}
-      <motion.div
-        className="text-[5rem] mb-6 mt-24"
-        initial={{ scale: 0, rotate: -15, opacity: 0 }}
-        animate={{ scale: 1, rotate: 0, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 200, damping: 10 }}
-      >
-        👩‍💻
-      </motion.div>
-
-      {/* Name & Title */}
-      <motion.h1
-        className="text-5xl font-extrabold tracking-wide"
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-      >
-        Hi, I'm Eman
-      </motion.h1>
-
-      {/*  */}
-      <motion.div
-        className="flex gap-2 text-3xl  font-bold mt-3 mb-2"
-        variants={container}
-        initial="hidden"
-        animate="visible"
-      >
-        {letters.map((char, index) => (
-          <motion.span
-            key={index}
-            variants={item}
-            whileHover={{ scale: 1.3, color: "#38bdf8" }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent cursor-pointer"
-          >
-            {char}
-          </motion.span>
-        ))}
-      </motion.div>
+      <div className="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden">
 
 
+        {/* 🔹 Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/fallback.jpg"
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 bg-black/40"
+        >
+          <source src="/videoblue-bg.mp4" type="video/mp4" />
+        </video>
 
-      <motion.p
-        className="mt-2 text-xl font-medium bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent cursor-pointer"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        whileHover={{ scale: 1.05 }}
-      >
-        Full Stack Web Developer
-      </motion.p>
+        {/* 🔹 Overlay for better contrast */}
+        <div className="absolute inset-0  -z-5"></div>
 
+        {/* 🔹 Animated Content */}
+        {/* <motion.div
+          className="text-[5rem] mb-6 mt-24"
+          initial={{ scale: 0, rotate: -15, opacity: 0 }}
+          animate={{ scale: 1, rotate: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        >
+          👩‍💻
+        </motion.div> */}
 
+        <motion.h1
+          className="text-5xl font-extrabold tracking-wide "
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          Hi, I'm Eman
+        </motion.h1>
 
+        {/* <motion.div
+          className="flex gap-2 text-3xl font-bold mt-3 mb-2"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+        >
+          {letters.map((char, index) => (
+            <motion.span
+              key={index}
+              variants={item}
+              whileHover={{ scale: 1.3, color: "#38bdf8" }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent cursor-pointer"
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.div> */}
 
-      {/* Tagline */}
-      <motion.p
-        className="max-w-2xl mt-4 text-[#ccd6f6] leading-relaxed text-lg"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.9, duration: 1 }}
-      >
-        <Typewriter
-          words={[
-            "I turn ideas into interactive, high-performing websites.",
-            "Clean UI. Fast. Responsive.",
-            "React & Tailwind at their best 🚀"
-          ]}
-          loop={0}
-          cursor
-          cursorStyle="|"
-          typeSpeed={60}
-          deleteSpeed={40}
-          delaySpeed={1500}
-        />
-      </motion.p>
+        <motion.p
+          className="mt-2 text-xl font-medium bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent cursor-pointer"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          whileHover={{ scale: 1.05 }}
+        >
+          Full Stack Web Developer
+        </motion.p>
+
+        <motion.p
+          className="max-w-2xl mt-4 text-[#ccd6f6] leading-relaxed text-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 1 }}
+        >
+          <Typewriter
+            words={[
+              "I turn ideas into interactive, high-performing websites.",
+              "Clean UI. Fast. Responsive.",
+              "React & Tailwind at their best 🚀"
+            ]}
+            loop={0}
+            cursor
+            cursorStyle="|"
+            typeSpeed={60}
+            deleteSpeed={40}
+            delaySpeed={1500}
+          />
+        </motion.p>
+      </div>
+
 
 
 
