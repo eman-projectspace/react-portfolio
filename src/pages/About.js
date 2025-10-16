@@ -62,7 +62,7 @@ const About = () => {
           >
             <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-2xl">
               <img
-                src="/profile-picc1.jpg"
+                src="/Eman.jpg"
                 alt="Eman Waheed"
                 className="w-full h-full object-top object-cover"
               />
