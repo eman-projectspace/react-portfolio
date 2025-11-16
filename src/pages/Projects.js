@@ -82,44 +82,6 @@ const projects = [
   },
   {
     id: 6,
-    title: 'Twitter Clone',
-    description: 'responsive Twitter clone built with Tailwind CSS, replicating the core UI and layout of the social media platform.',
-    tech: ['React', 'Tailwind CSS'],
-    codeLink: 'https://github.com/eman-projectspace/twitter-clone-tailwind',
-    demoLink: 'https://twitter-clone-tailwind-rho.vercel.app/',
-    image: '/Twitter-Clone.PNG',
-    category: 'Clone',
-    featured: true,
-    difficulty: 'Intermediate',
-    status: 'Live'
-  },
-  {
-    id: 7,
-    title: 'Spotify Clone',
-    description: 'responsive Spotify clone built with Html, CSS and javascript replicating the core UI and layout of the social media platform and some basic functionality.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    codeLink: 'https://github.com/eman-projectspace/spotify-clone',
-    demoLink: 'https://spotify-clone-tan-nine.vercel.app/',
-    image: '/Spotify.jpeg',
-    category: 'Clone',
-    featured: true,
-    difficulty: 'Intermediate',
-    status: 'Live'
-  },
-  {
-    id: 8,
-    title: 'LinkSite ',
-    description: 'simple and responsive Linktree clone built with Tailwind CSS, allowing users to share multiple links on a single page.',
-    tech: ['javaScript', 'Next.Js'],
-    codeLink: 'https://github.com/eman-projectspace/linksite',
-    demoLink: '/linktree.mp4',
-    image: '/Linksite.PNG',
-    category: 'Clone',
-    featured: true,
-    difficulty: 'Intermediate',
-    status: 'Development'
-  }, {
-    id: 9,
     title: '6Dot',
     description: 'Responsive e-commerce website for 6Dot footwear built with React and Tailwind CSS.',
     tech: ['JavaScript', 'React.js', 'Tailwind CSS', 'Framer Motion'],
@@ -131,7 +93,7 @@ const projects = [
     difficulty: 'Advanced',
     status: 'Live'
   }, {
-    id: 10,
+    id: 7,
     title: 'Professional Video Blogger Website',
     description: 'A professional and responsive WordPress website designed for video bloggers. Built using WordPress themes and plugins to create an engaging, easy-to-navigate, and content-focused layout.',
     tech: ['WordPress', 'Elementor', 'PHP', 'CSS', 'JavaScript'],
