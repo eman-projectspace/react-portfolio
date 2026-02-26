@@ -9,6 +9,7 @@ import Cursor from './components/Cursor';
 import Blog from './pages/Blog';
 import Background from './components/Background';
 import Reviews from './components/Reviews';
+import Aether from './components/Aether';
 
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={< Contacts />} />
           <Route path="/reviews" element={< Reviews />} />
+
         </Routes>
+        <Aether />
       </div>
     </Router>
   );
