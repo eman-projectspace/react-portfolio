@@ -65,14 +65,26 @@ const blogPosts = [
 
   { id: 24, title: "Amazon CLI", icon: FaTerminal, color: "#FF9900", date: "2025-08-27", category: "AI Tools", content: "Amazon CLI manages AWS resources from terminal — We can make simple webites from its terminal.One thing to keep in mind these ai tools can support and speed things up,but you cant rely on it entirely -you still need to understand and build things yourself." },
   {
-    id: 25,
-    title: "Exploring WordPress for Web Design",
-    icon: FaWordpress,
-    color: "#21759B",
-    date: "2025-10-08",
-    category: "Web Development",
-    content:
+    id: 25, title: "Exploring WordPress for Web Design", icon: FaWordpress, color: "#21759B", date: "2025-10-08", category: "Web Development", content:
       "Last week, I explored WordPress and experimented with different design tools, themes, and plugins. Through this learning process, I created a Professional Video Blogger website — focusing on clean design, responsiveness, and user-friendly functionality. WordPress made it easy to bring ideas to life without heavy coding, helping me understand how flexible and powerful it can be for both developers and creators."
+  }, {
+    id: 26,
+    title: "Building an AI Agent with Warp AI",
+    icon: FaRobot,
+    color: "#6C63FF",
+    date: "2026-02-15",
+    category: "AI Tools",
+    content:
+      "Recently, I stepped into the world of AI integration. I explored how AI agents can enhance user experience by providing real-time responses, smart assistance, and interactive support within websites. This project helped me understand how modern AI tools can be integrated with web applications to create smarter and more dynamic digital experiences."
+  }, {
+    id: 27,
+    title: "AI Agent Integration with Botpress",
+    icon: FaRobot,
+    color: "#FF6B35",
+    date: "2026-02-20",
+    category: "AI Tools",
+    content:
+      "I built and integrated an intelligent AI agent using Botpress and successfully deployed it within my portfolio website. The AI assistant provides real-time responses, interactive support, and enhances user engagement by guiding visitors throughout the site. This experience helped me understand conversational AI workflows, bot customization, and seamless frontend integration with modern web applications."
   }
 
 ];
