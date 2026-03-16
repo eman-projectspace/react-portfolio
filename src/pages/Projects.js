@@ -85,8 +85,8 @@ const projects = [
     title: '6Dot',
     description: 'Responsive e-commerce website for 6Dot footwear built with React and Tailwind CSS.',
     tech: ['JavaScript', 'React.js', 'Tailwind CSS', 'Framer Motion'],
-    codeLink: '', // add if available
-    demoLink: '', // add if available
+    codeLink: 'https://github.com/eman-projectspace/sixdot',
+    demoLink: 'https://sixdot.vercel.app/',
     image: '/Shoe1.PNG',
     category: 'E-commerce',
     featured: true,
