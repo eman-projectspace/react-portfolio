@@ -135,6 +135,34 @@ const projects = [
     difficulty: 'Intermediate',
     status: 'Live',
   },
+  {
+    id: 8,
+    title: 'Glazen — Handcrafted Décor eCommerce Website',
+    description:
+      'A visually engaging handcrafted décor eCommerce website built with HTML, CSS, and JavaScript, featuring interactive animations, dynamic cart functionality, category filtering, smooth page transitions, and responsive UI design. The frontend is complete, with backend development planned next.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    codeLink: 'https://github.com/eman-projectspace/glazen',
+    demoLink: '',
+    image: '/glazen1.PNG',
+    category: 'Frontend',
+    featured: true,
+    difficulty: 'Intermediate',
+    status: 'In Progress',
+  },
+  {
+    id: 9,
+    title: 'HopeCloud — Donation Management Platform',
+    description:
+      'A donation management platform developed during the Alibaba Cloud AI Hackathon 2026 to simplify the process of donating items. The project includes user authentication, donation management, personalized donation history, impact tracking, and a responsive user interface. I contributed primarily to the Laravel backend, API development, authentication, database integration, and donation-related functionality.',
+    tech: ['React', 'Laravel', 'PHP', 'MySQL', 'REST API'],
+    codeLink: 'https://github.com/eman-projectspace/HopeCloud-backend',
+    demoLink: '',
+    image: '/hopeCloud.PNG',
+    category: 'Full Stack',
+    featured: true,
+    difficulty: 'Intermediate',
+    status: 'In Progress',
+  },
 ];
 
 /* =========================================================
