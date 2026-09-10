@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaArrowRight, FaCode, FaExternalLinkAlt } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
 import SmallDots from '../components/SmallDots';
-import Reviews from '../components/Reviews';
+// import Reviews from '../components/Reviews';
 
 const projects = [
   {
@@ -291,77 +291,200 @@ const Home = () => {
       </section>
 
       {/* ================= PROJECTS ================= */}
-      <section className="max-w-7xl mx-auto py-28 px-6">
+      {/* ================= PROJECTS ================= */}
+      <section className="relative max-w-7xl mx-auto py-28 px-6">
 
+        {/* Section heading */}
         <motion.div
-          className="text-center mb-14"
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16"
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 mb-3">
+              Selected work
+            </p>
 
-          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 mb-3">
-            Selected work
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+              Things I've built
+            </h2>
+          </div>
+
+          <p className="max-w-md text-slate-400 leading-7 md:text-right">
+            A collection of projects I've built while learning, experimenting,
+            and turning ideas into practical digital experiences.
           </p>
-
-          <h2 className="text-3xl sm:text-4xl font-bold">
-            Projects
-          </h2>
-
-          <p className="mt-4 max-w-xl mx-auto text-slate-400">
-            A few things I've built while learning, experimenting and solving
-            real-world problems.
-          </p>
-
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-          {projects.map((project, index) => (
+        {/* ================= FEATURED PROJECT ================= */}
+        {projects[0] && (
+          <motion.article
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="group relative mb-8 overflow-hidden border border-white/[0.09] bg-[#0a1324] hover:border-cyan-400/30 transition-all duration-500"
+          >
+
+            <div className="grid lg:grid-cols-[1.15fr_0.85fr] min-h-[430px]">
+
+              {/* Image */}
+              <div className="relative min-h-[280px] lg:min-h-full overflow-hidden">
+
+                <img
+                  src={projects[0].image}
+                  alt={`${projects[0].title} screenshot`}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                />
+
+                {/* Image overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0a1324]/90 hidden lg:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1324]/70 to-transparent lg:hidden" />
+
+                {/* Project number */}
+                <span className="absolute top-6 left-6 text-xs tracking-[0.25em] text-white/60">
+                  01
+                </span>
+
+              </div>
+
+
+              {/* Content */}
+              <div className="relative flex flex-col justify-center p-8 sm:p-10 lg:p-12">
+
+                <span className="text-xs uppercase tracking-[0.25em] text-cyan-400 mb-5">
+                  Featured project
+                </span>
+
+                <h3 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
+                  {projects[0].title}
+                </h3>
+
+                <p className="mt-5 text-slate-400 leading-7">
+                  {projects[0].description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mt-7">
+                  {projects[0].tech.map((technology) => (
+                    <span
+                      key={technology}
+                      className="text-xs text-slate-300 border border-white/10 px-3 py-1.5"
+                    >
+                      {technology}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex items-center gap-6 mt-8">
+
+                  {projects[0].codeLink && (
+                    <a
+                      href={projects[0].codeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-white hover:text-cyan-400 transition"
+                    >
+                      <FaGithub />
+                      View Code
+                    </a>
+                  )}
+
+                  {projects[0].demoLink && (
+                    <a
+                      href={projects[0].demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition"
+                    >
+                      <FaExternalLinkAlt className="text-xs" />
+                      Live Demo
+                    </a>
+                  )}
+
+                </div>
+
+                {/* Decorative line */}
+                <div className="absolute bottom-0 left-0 w-24 h-px bg-cyan-400/50 group-hover:w-40 transition-all duration-500" />
+
+              </div>
+
+            </div>
+
+          </motion.article>
+        )}
+
+
+        {/* ================= OTHER PROJECTS ================= */}
+        <div className="grid md:grid-cols-2 gap-8">
+
+          {projects.slice(1).map((project, index) => (
 
             <motion.article
               key={project.title}
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: index * 0.08 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.08,
+              }}
               viewport={{ once: true }}
-              whileHover={{ y: -7 }}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0b1426] hover:border-cyan-400/30 transition-all duration-300"
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden border border-white/[0.09] bg-[#0a1324] hover:border-cyan-400/30 transition-all duration-500"
             >
 
               {/* Image */}
-              <div className="relative h-48 overflow-hidden bg-slate-900">
+              <div className="relative h-64 overflow-hidden bg-slate-900">
 
                 <img
                   src={project.image}
                   alt={`${project.title} screenshot`}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b1426] via-transparent to-transparent opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1324] via-transparent to-transparent opacity-80" />
+
+                {/* Number */}
+                <span className="absolute top-5 left-5 text-xs tracking-[0.25em] text-white/60">
+                  {String(index + 2).padStart(2, '0')}
+                </span>
 
               </div>
 
+
               {/* Content */}
-              <div className="flex flex-col flex-grow p-6">
+              <div className="p-7">
 
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  {project.title}
-                </h3>
+                <div className="flex items-start justify-between gap-4">
 
-                <p className="text-sm text-slate-400 leading-6 flex-grow">
+                  <h3 className="text-xl font-semibold text-white leading-snug">
+                    {project.title}
+                  </h3>
+
+                  <FaArrowRight
+                    className="mt-1 shrink-0 text-slate-600 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all"
+                  />
+
+                </div>
+
+                <p className="mt-4 text-sm text-slate-400 leading-6">
                   {project.description}
                 </p>
 
-                {/* Tech */}
-                <div className="flex flex-wrap gap-2 mt-5">
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mt-6">
 
                   {project.tech.map((technology) => (
                     <span
                       key={technology}
-                      className="px-2.5 py-1 rounded-md bg-white/[0.06] border border-white/[0.08] text-[11px] text-slate-300"
+                      className="text-[11px] text-slate-300 border border-white/[0.08] px-2.5 py-1.5"
                     >
                       {technology}
                     </span>
@@ -369,8 +492,9 @@ const Home = () => {
 
                 </div>
 
+
                 {/* Links */}
-                <div className="flex items-center gap-5 mt-6 pt-5 border-t border-white/[0.07]">
+                <div className="flex items-center gap-6 mt-7 pt-5 border-t border-white/[0.07]">
 
                   {project.codeLink && (
                     <a
@@ -399,24 +523,33 @@ const Home = () => {
                 </div>
 
               </div>
+
             </motion.article>
 
           ))}
 
         </div>
 
+
         {/* More projects */}
-        <div className="flex justify-center mt-12">
+        <motion.div
+          className="flex justify-center mt-14"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
 
           <a
             href="/projects"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] hover:border-cyan-400/30 transition-all"
+            className="group inline-flex items-center gap-3 text-sm text-slate-300 hover:text-cyan-400 transition"
           >
             Explore all projects
-            <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
+            <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
           </a>
 
-        </div>
+        </motion.div>
+
       </section>
 
       {/* ================= CTA ================= */}
@@ -485,7 +618,7 @@ const Home = () => {
       </section>
 
       {/* ================= REVIEWS ================= */}
-      <Reviews />
+      {/* <Reviews /> */}
 
       {/* ================= FOOTER ================= */}
       <motion.footer
