@@ -91,7 +91,7 @@ const About = () => {
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 overflow-hidden rounded-full border border-white/10 bg-[#0b1426] shadow-2xl">
 
               <img
-                src="/Eman.jpeg"
+                src="/code-1076533_1280.jpg"
                 alt="Eman Waheed"
                 className="w-full h-full object-cover"
               />
